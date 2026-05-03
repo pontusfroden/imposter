@@ -598,7 +598,7 @@
                 <p>${state.screen === "round" ? "Skicka telefonen vidare" : "Ett spel, en telefon"}</p>
               </div>
             </div>
-            ${state.screen !== "home" ? `<button class="ghost-btn" onclick="goSetup()">Setup</button>` : ""}
+            ${state.screen === "round" ? `<button class="ghost-btn" onclick="goSetup()">Setup</button>` : ""}
           </header>
           ${content}
           ${actions}
