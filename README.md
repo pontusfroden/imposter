@@ -11,7 +11,9 @@ En mobilanpassad webbapp för Imposter, byggd för att kunna köras direkt från
 1. Lägg upp repot på GitHub.
 2. Aktivera GitHub Pages för branchen `master` eller `main`.
 3. Öppna GitHub Pages-länken i mobilen.
-4. Välj "Lägg till på hemskärmen" i webbläsaren.
+4. Välj "Lägg till på hemskärmen" på iPhone eller "Installera app" på Android/Chrome.
+
+När appen öppnas från hemskärmen körs den i standalone-läge utan webbläsarens adressfält.
 
 ## Första versionen
 
