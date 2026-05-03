@@ -525,6 +525,7 @@
       screen: "home",
       type: "classic",
       categories: ["vardag", "mat", "platser", "sverige"],
+      imposterInfo: { clue: false, category: false },
       playerCount: 5,
       players: DEFAULT_NAMES.slice(0, 5),
       imposters: 1,
@@ -533,6 +534,7 @@
 
     state.screen = "home";
     state.round = null;
+    state.imposterInfo = state.imposterInfo || { clue: false, category: false };
 
     function loadState() {
       try {
@@ -548,6 +550,7 @@
         screen: "home",
         type: state.type,
         categories: state.categories,
+        imposterInfo: state.imposterInfo,
         playerCount: state.playerCount,
         players: state.players,
         imposters: state.imposters,
@@ -662,6 +665,20 @@
           </div>
 
           <div class="panel">
+            <p class="section-title">För imposter</p>
+            <div class="choice-grid">
+              <button class="choice ${state.imposterInfo.clue ? "active" : ""}" onclick="toggleImposterInfo('clue')">
+                <strong>Med ledtråd</strong>
+                <span>Första bokstaven och ordlängd</span>
+              </button>
+              <button class="choice ${state.imposterInfo.category ? "active" : ""}" onclick="toggleImposterInfo('category')">
+                <strong>Med kategori</strong>
+                <span>Visar vilken kategori ordet tillhör</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="panel">
             <p class="section-title">Kategorier</p>
             <div class="choice-grid">
               ${CATEGORIES.map(category => `
@@ -717,7 +734,7 @@
       const detail = !isRevealed
         ? `${round.current + 1} av ${round.players.length}`
         : isImposter
-          ? "Låtsas att du vet ordet."
+          ? imposterDetail(round)
           : `Kategori: ${round.category}`;
 
       renderShell(h`
@@ -758,6 +775,12 @@
       render();
     }
 
+    function toggleImposterInfo(key) {
+      state.imposterInfo[key] = !state.imposterInfo[key];
+      saveState();
+      render();
+    }
+
     function setPlayerCount(count) {
       state.playerCount = Math.max(3, Math.min(14, count));
       while (state.players.length < state.playerCount) {
@@ -788,6 +811,7 @@
       state.round = {
         word: chosen.word,
         category: chosen.category,
+        imposterInfo: { ...state.imposterInfo },
         players,
         imposters,
         current: 0,
@@ -796,6 +820,23 @@
       state.screen = "round";
       saveState();
       render();
+    }
+
+    function imposterDetail(round) {
+      const details = [];
+      if (round.imposterInfo?.category) {
+        details.push(`Kategori: ${round.category}`);
+      }
+      if (round.imposterInfo?.clue) {
+        details.push(`Ledtråd: ${wordClue(round.word)}`);
+      }
+      return details.length ? details.join(" · ") : "Låtsas att du vet ordet.";
+    }
+
+    function wordClue(word) {
+      const letters = [...word.replace(/[^A-Za-zÅÄÖåäö]/g, "")];
+      const first = letters[0] ? letters[0].toUpperCase() : "?";
+      return `${first}, ${letters.length} bokstäver`;
     }
 
     function revealCard() {
