@@ -523,7 +523,6 @@
 
     let state = loadState() || {
       screen: "home",
-      seenLanding: false,
       type: "classic",
       categories: ["vardag", "mat", "platser", "sverige"],
       playerCount: 5,
@@ -532,9 +531,8 @@
       round: null
     };
 
-    if (!state.seenLanding) {
-      state.screen = "home";
-    }
+    state.screen = "home";
+    state.round = null;
 
     function loadState() {
       try {
@@ -547,8 +545,7 @@
 
     function saveState() {
       localStorage.setItem(STORAGE_KEY, JSON.stringify({
-        screen: state.screen === "round" ? "setup" : state.screen,
-        seenLanding: state.seenLanding,
+        screen: "home",
         type: state.type,
         categories: state.categories,
         playerCount: state.playerCount,
@@ -636,14 +633,13 @@
             <h2>Imposter</h2>
             <p>Välj kategorier, skriv in spelarna och skicka runt mobilen. Alla får samma ord, förutom impostern.</p>
           </div>
-          <button class="primary" onclick="goSetup()">Starta spel</button>
+          <button class="primary" onclick="goSetup()">Inställningar</button>
         </section>
       `);
     }
 
     function goIntro() {
       state.screen = "intro";
-      state.seenLanding = true;
       saveState();
       render();
     }
