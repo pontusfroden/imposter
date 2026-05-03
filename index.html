@@ -328,8 +328,8 @@
       min-height: min(62svh, 540px);
       border-radius: 18px;
       border: 1px solid rgba(255, 255, 255, .22);
-      background: linear-gradient(150deg, #f8fafc, #dbeafe);
-      color: #111827;
+      background: #05070c;
+      color: var(--text);
       box-shadow: var(--shadow);
       display: flex;
       flex-direction: column;
@@ -350,8 +350,18 @@
       color: var(--text);
     }
 
+    .role-card.word {
+      background: linear-gradient(145deg, #020617, #090d16);
+      border-color: rgba(255, 255, 255, .2);
+    }
+
+    .role-card.imposter {
+      background: linear-gradient(145deg, #210306, #5f0b16);
+      border-color: rgba(251, 113, 133, .45);
+    }
+
     .card-kicker {
-      color: rgba(17, 24, 39, .66);
+      color: rgba(248, 250, 252, .62);
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: .08em;
@@ -371,7 +381,7 @@
     }
 
     .role-detail {
-      color: rgba(17, 24, 39, .72);
+      color: rgba(226, 232, 240, .78);
       max-width: 25rem;
       line-height: 1.35;
     }
@@ -620,7 +630,7 @@
       renderShell(h`
         <section class="screen card-stage">
           <p class="pass"><strong>${esc(player)}</strong>${round.current + 1} av ${round.players.length}</p>
-          <button class="role-card ${isRevealed ? "" : "hidden"}" onclick="${isRevealed ? "hideAndNext()" : "revealCard()"}">
+          <button class="role-card ${isRevealed ? (isImposter ? "imposter" : "word") : "hidden"}" onclick="${isRevealed ? "hideAndNext()" : "revealCard()"}">
             <span class="card-kicker">${isRevealed ? "Ditt kort" : "Hemligt kort"}</span>
             <span class="role-word">${esc(cardText)}</span>
             <span class="role-detail">${esc(detail)}</span>
