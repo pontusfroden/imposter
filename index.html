@@ -109,6 +109,47 @@
       font-weight: 900;
     }
 
+    .logo {
+      --logo-size: 68px;
+      width: var(--logo-size);
+      height: var(--logo-size);
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #f97316);
+      box-shadow: 0 18px 42px rgba(249, 115, 22, .25);
+      display: grid;
+      place-items: center;
+      position: relative;
+      color: #111827;
+    }
+
+    .logo::before {
+      content: "";
+      width: 64%;
+      height: 34%;
+      border-radius: 999px 999px 22px 22px;
+      background: currentColor;
+      position: absolute;
+      top: 32%;
+    }
+
+    .logo::after {
+      content: "";
+      width: 42%;
+      height: 10%;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 20% 50%, var(--accent) 0 28%, transparent 30%),
+        radial-gradient(circle at 80% 50%, var(--accent) 0 28%, transparent 30%);
+      position: absolute;
+      top: 44%;
+    }
+
+    .mark .logo {
+      --logo-size: 30px;
+      box-shadow: none;
+      background: transparent;
+    }
+
     .brand h1 {
       margin: 0;
       font-size: 1.14rem;
@@ -172,6 +213,39 @@
       margin: 0;
       max-width: 34rem;
       color: #dbe4f0;
+      line-height: 1.45;
+    }
+
+    .landing {
+      flex: 1;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      min-height: calc(100svh - 40px);
+    }
+
+    .landing-inner {
+      width: min(100%, 390px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .landing .logo {
+      --logo-size: 138px;
+    }
+
+    .landing h2 {
+      margin: 6px 0 0;
+      font-size: clamp(3.1rem, 17vw, 5.4rem);
+      line-height: .9;
+      letter-spacing: 0;
+    }
+
+    .landing p {
+      margin: 0 0 8px;
+      color: var(--muted);
       line-height: 1.45;
     }
 
@@ -449,6 +523,7 @@
 
     let state = loadState() || {
       screen: "home",
+      seenLanding: false,
       type: "classic",
       categories: ["vardag", "mat", "platser", "sverige"],
       playerCount: 5,
@@ -456,6 +531,10 @@
       imposters: 1,
       round: null
     };
+
+    if (!state.seenLanding) {
+      state.screen = "home";
+    }
 
     function loadState() {
       try {
@@ -469,6 +548,7 @@
     function saveState() {
       localStorage.setItem(STORAGE_KEY, JSON.stringify({
         screen: state.screen === "round" ? "setup" : state.screen,
+        seenLanding: state.seenLanding,
         type: state.type,
         categories: state.categories,
         playerCount: state.playerCount,
@@ -512,7 +592,7 @@
         <div class="shell">
           <header class="topbar">
             <div class="brand">
-              <div class="mark">?</div>
+              <div class="mark"><div class="logo" aria-hidden="true"></div></div>
               <div>
                 <h1>Imposter</h1>
                 <p>${state.screen === "round" ? "Skicka telefonen vidare" : "Ett spel, en telefon"}</p>
@@ -528,12 +608,28 @@
 
     function render() {
       if (state.screen === "home") return renderHome();
+      if (state.screen === "intro") return renderIntro();
       if (state.screen === "setup") return renderSetup();
       if (state.screen === "round") return renderRound();
       renderHome();
     }
 
     function renderHome() {
+      document.getElementById("app").innerHTML = h`
+        <div class="shell">
+          <section class="landing">
+            <div class="landing-inner">
+              <div class="logo" aria-hidden="true"></div>
+              <h2>Imposter</h2>
+              <p>Ett ord. En lögnare. En telefon.</p>
+              <button class="primary" onclick="goIntro()">Gå vidare</button>
+            </div>
+          </section>
+        </div>
+      `;
+    }
+
+    function renderIntro() {
       renderShell(h`
         <section class="screen">
           <div class="hero">
@@ -543,6 +639,13 @@
           <button class="primary" onclick="goSetup()">Starta spel</button>
         </section>
       `);
+    }
+
+    function goIntro() {
+      state.screen = "intro";
+      state.seenLanding = true;
+      saveState();
+      render();
     }
 
     function renderSetup() {
@@ -611,21 +714,21 @@
       const isRevealed = round.revealed;
       const isImposter = round.imposters.includes(round.current);
       const cardText = !isRevealed
-        ? "Tryck för att visa"
+        ? player
         : isImposter
           ? "IMPOSTER"
           : round.word;
       const detail = !isRevealed
-        ? "Se till att bara rätt person tittar."
+        ? `${round.current + 1} av ${round.players.length}`
         : isImposter
           ? "Låtsas att du vet ordet."
           : `Kategori: ${round.category}`;
 
       renderShell(h`
         <section class="screen card-stage">
-          <p class="pass"><strong>${esc(player)}</strong>${round.current + 1} av ${round.players.length}</p>
+          <p class="pass"><strong>${round.current + 1} av ${round.players.length}</strong></p>
           <button class="role-card ${isRevealed ? (isImposter ? "imposter" : "word") : "hidden"}" onclick="${isRevealed ? "hideAndNext()" : "revealCard()"}">
-            <span class="card-kicker">${isRevealed ? "Ditt kort" : "Hemligt kort"}</span>
+            <span class="card-kicker">${isRevealed ? "Ditt kort" : "Spelare"}</span>
             <span class="role-word">${esc(cardText)}</span>
             <span class="role-detail">${esc(detail)}</span>
           </button>
@@ -725,13 +828,17 @@
       ctx.fillStyle = "#111827";
       ctx.fillRect(0, 0, size, size);
       ctx.fillStyle = "#f4c95d";
-      roundedRect(ctx, size * .16, size * .16, size * .68, size * .68, size * .08);
+      ctx.beginPath();
+      ctx.arc(size / 2, size / 2, size * .36, 0, Math.PI * 2);
       ctx.fill();
       ctx.fillStyle = "#111827";
-      ctx.font = `900 ${size * .48}px system-ui, sans-serif`;
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
-      ctx.fillText("?", size / 2, size * .54);
+      roundedRect(ctx, size * .28, size * .39, size * .44, size * .22, size * .09);
+      ctx.fill();
+      ctx.fillStyle = "#f4c95d";
+      ctx.beginPath();
+      ctx.arc(size * .42, size * .5, size * .045, 0, Math.PI * 2);
+      ctx.arc(size * .58, size * .5, size * .045, 0, Math.PI * 2);
+      ctx.fill();
       return canvas.toDataURL("image/png");
     }
 
