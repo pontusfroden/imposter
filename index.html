@@ -615,6 +615,1979 @@
       "Trasig hiss": "trappor"
     };
 
+    const CATEGORY_EXPANSIONS = {
+      vardag: parseWordPairs(`
+Kaffebryggare|morgon
+Dammsugare|smulor
+Spegel|reflektion
+Gardin|insyn
+Köksbord|middag
+Matlåda|rester
+Ryggsäck|packning
+Plånbok|kortfack
+Laddare|batteri
+Duschhandduk|frotté
+Tofflor|hemmamys
+Sänglampa|kvällsljus
+Skärbräda|hacka
+Kastrull|kokar
+Stekpanna|fräs
+Visp|smet
+Durkslag|pasta
+Rivjärn|ostflingor
+Osthyvel|skiva
+Brödrost|rostigt
+Mikrovågsugn|pling
+Ugnsvante|värmeskydd
+Diskmaskin|tablett
+Sopborste|skräp
+Soppåse|knut
+Återvinning|sortera
+Hallmatta|smutsiga skor
+Skoställ|hallordning
+Jacka|ytterplagg
+Mössa|kalla öron
+Vantar|frusna fingrar
+Halsduk|knut runt halsen
+Regnjacka|blöt dag
+Cykelhjälm|huvudskydd
+Barnvagn|promenad
+Termos|varmt länge
+Lunchlåda|mikrad mat
+Kryddburk|smak
+Saltkar|nypa
+Pepparkvarn|malet
+Kaffemugg|handtag
+Tekopp|tepåse
+Dricksglas|klirr
+Tallrik|middag
+Bestick|gaffel
+Servett|torka munnen
+Disktrasa|bänkfläck
+Handtvål|löddrigt
+Schampo|hårskum
+Tandkräm|fluor
+Rakhyvel|stubbe
+Deodorant|fräsch
+Plåster|litet sår
+Febertermometer|grader
+Medicinskåp|första hjälpen
+Nagelsax|klippa kort
+Hårborste|tovor
+Hårsnodd|uppsatt
+Tvättkorg|smutstvätt
+Klädnypa|torklina
+Strykjärn|veck
+Galge|hänga skjorta
+Garderob|klädförvaring
+Byrå|lådor
+Bokhylla|ryggar
+Tavla|väggmotiv
+Krukväxt|vattna
+Fjärrkontroll|zappa
+Router|blinkande lampor
+Eluttag|kontakt
+Grenuttag|många sladdar
+Glödlampa|byta ljus
+Brandvarnare|pip
+Skruvmejsel|skruv
+Hammare|spik
+Måttband|centimeter
+Tejp|klibbar
+Sax|klippa
+Penna|skriva
+Anteckningsbok|kom ihåg
+Kalender|datum
+Brevlåda|post
+Dörrmatta|välkommen
+Portkod|fyra siffror
+Hissknapp|upp eller ner
+Trapphus|ekande steg
+Cykellås|kedja
+Reflexer|syns i mörker
+Bankkort|blippa
+Kvitto|bevis
+Mynt|skrammel
+Kontanter|sedlar
+Legitimation|visa ålder
+Glasögon|skarpare syn
+Solglasögon|skugga
+Kontaktlinser|på ögat
+Klocka|tid
+Ring|finger
+Halsband|kedja
+Handväska|bär allt
+Tygpåse|handling
+Parfym|doft
+Rakapparat|surr
+Sminkväska|necessär
+Läppbalsam|torra läppar
+Näsdukar|snyta
+Toalettpapper|rulle
+Hushållspapper|spill
+Dammsugarpåse|dammfångst
+Städmopp|vått golv
+Skurhink|skurvatten
+Fönsterputs|ränder
+Diskmedel|skum
+Tvättmedel|ren tvätt
+Sköljmedel|mjuk doft
+Sopkärl|lock
+Element|värme
+Termostat|vrida grader
+Fläkt|svalka
+Luftfuktare|torr luft
+Förvaringslåda|stapla
+Verktygslåda|skrammel
+Batteri|pluspol
+Ficklampa|mörkerljus
+Tändstickor|svavel
+Stearinljus|låga
+Ljusstake|levande ljus
+Väckarklocka|snooze
+Sängbord|nattplats
+Påslakan|bädda
+Kudde|huvudstöd
+Täcke|varmt
+Madrass|sova
+Gardinstång|hänga tyg
+Persienn|vrida lameller
+Balkongstol|uteplats
+Blomjord|plantera
+Vattenkanna|vattna blad
+Hundkoppel|promenadryck
+Kattlåda|sand
+Matskål|husdjur
+Fågelbur|kvitter
+Akvarium|bubblor
+Leksakslåda|barnrum
+Spelkonsol|kontroll
+Kortlek|blanda
+Pussel|bitar
+Brädspel|spelkväll
+Bokmärke|spara sida
+Tidning|prassel
+Post-it|gul lapp
+Whiteboard|suddpenna
+Hörselskydd|tystare
+USB-minne|liten lagring
+Surfplatta|pekskärm
+Laptop|fällbar dator
+Musmatta|glid
+Tangentbord|knappar
+Datormus|klick
+Webbkamera|videosamtal
+Skrivare|papper ut
+Bläckpatron|färgbyte
+Kuvert|förslutning
+Frimärke|porto
+Paket|leverans
+Leverans|bud
+Nyckelring|samlar nycklar
+Garageport|fjärröppning
+Bilnyckel|starta motor
+Parkeringsapp|zonkod
+Elcykel|batterihjälp
+Cykelpump|luft
+Däckpump|tryckmätare
+Verktygskniv|brytblad
+Fickkniv|hopfällbar
+Grilltång|vända mat
+Grillkol|glöd
+Picknickfilt|uteätning
+Strandhandduk|sandig frotté
+Solkräm|skyddsfaktor
+Myggspray|surrskydd
+Termobyxor|vintervärme
+Regnställ|helkroppsregn
+Gummistövlar|pölar
+Snöskyffel|skotta
+Isskrapa|bilruta
+Soppslev|ösa
+Potatisskalare|skalremsor
+Konservöppnare|plåtburk
+Flasköppnare|kapsyl
+Korkskruv|vinflaska
+Äggklocka|minuter
+Köksvåg|gram
+Fryspåse|frostförvaring
+Matfolie|täcka skål
+Bakplåtspapper|ugnsark
+Degskrapa|kladdig bänk
+Slickepott|sista smeten
+Vispskål|baka
+Bakform|kaka
+Decilitermått|mäta mjöl
+Timer|nedräkning
+Diskställ|lufttorka
+Kryddhylla|burkrad
+Skafferi|torrvaror
+Fryslåda|fryst
+Isbricka|isbitar
+Kylmagnet|på dörren
+Kökssvamp|skrubb
+Golvbrunn|duschavlopp
+Duschdraperi|stänkskydd
+Badmatta|våta fötter
+Toaborste|porslin
+Spegelskåp|badrumsförvaring
+Tvättlina|hänga kläder
+Torkställning|vikbar tvätt
+Luddroller|kläder utan hår
+Skoputs|blankt läder
+Klädborste|damm från kavaj
+Lösenord|hemlig fras
+Wifi|trådlöst
+Mobildata|surf
+Alarm|väckning
+Kalenderpåminnelse|notis
+Inkorg|nya mejl
+Röstbrevlåda|missat samtal
+Spellista|låtar i rad
+Podd|prat i öronen
+Streamingkonto|seriekväll
+Rabattkod|billigare
+Inköpslista|glöm inte
+Veckohandling|full kasse
+Returpaket|skicka tillbaka
+Pantpåse|burkar
+Återvinningspåse|sorterat skräp
+Elräkning|kilowatt
+Hyresavi|månadskostnad
+Hemförsäkring|skydd hemma
+Dörrkedja|extra lås
+Fönsterlås|vädra säkert
+      `),
+      mat: parseWordPairs(`
+Spaghetti|långa strån
+Carbonara|ägg och ost
+Köttbullar|brunsås
+Potatismos|pressat
+Korvstroganoff|tomatsås
+Risotto|krämigt ris
+Paella|saffranspanna
+Currygryta|gul hetta
+Gryta|puttrar
+Soppa|skålmat
+Tomatsoppa|röd sked
+Ärtsoppa|torsdag
+Gulasch|paprika
+Chili con carne|bönhetta
+Burrito|inrullat
+Quesadilla|ostficka
+Nachos|krispiga chips
+Guacamole|mosad avokado
+Hummus|kikärtsröra
+Baba ganoush|aubergineröra
+Tabouleh|persilja
+Shawarma|snurrspett
+Kebab|hyvlat kött
+Gyros|pitabröd
+Dumplings|små paket
+Bao|ångat bröd
+Pho|nudelbuljong
+Pad thai|jordnötter
+Bibimbap|risblandning
+Kimchi|fermenterat
+Tempura|frasig fritering
+Edamame|gröna bönor
+Miso|salt soppa
+Udon|tjocka nudlar
+Yakitori|grillspett
+Poke bowl|rå fisk
+Ceviche|limekokt
+Tapas|smårätter
+Gazpacho|kall soppa
+Tortilla|spansk äggkaka
+Empanada|fylld halvmåne
+Arepa|majsbröd
+Crepes|tunna pannor
+Croissant|smörlager
+Baguette|fransk längd
+Focaccia|olivolja
+Ciabatta|luftigt bröd
+Surdegsbröd|seg skorpa
+Knäckebröd|hårt knaster
+Rågbröd|mörkt bröd
+Bagel|brödring
+Pretzel|salt knut
+Brioche|sött smör
+Semla|mandelmassa
+Prinsesstårta|grön marsipan
+Cheesecake|färskost
+Kladdkaka|seg mitten
+Morotskaka|frosting
+Äppelpaj|kanel
+Blåbärspaj|blå tunga
+Crème brûlée|bränt socker
+Tiramisu|kaffekräm
+Panna cotta|dallrig grädde
+Glass|frysskopa
+Sorbet|fruktis
+Milkshake|sugrör
+Smoothie|mixad frukt
+Yoghurt|syrlig skål
+Granola|knaprig topping
+Havregrynsgröt|frukostskål
+Omelett|vikt ägg
+Äggröra|röra i pannan
+Bacon|knaprigt fläsk
+Skinka|rosa skivor
+Salami|pepparkorv
+Chorizo|rökig hetta
+Lax|rosa fisk
+Räkor|skalhögar
+Musslor|svarta skal
+Tonfisk|burk eller bit
+Sill|inlagd fisk
+Kaviar|tub
+Ostbricka|kex
+Brie|vitmögel
+Parmesan|riven sälta
+Mozzarella|mjuk boll
+Fetaost|salt kub
+Halloumi|gnisselost
+Burrata|krämig mitt
+Smör|bre på
+Margarin|gult paket
+Majonnäs|fet sås
+Aioli|vitlökssås
+Bearnaise|dragon
+Ketchup|röd flaska
+Senap|gul sting
+Pesto|basilika
+Salsa|hackad hetta
+Sriracha|röd tupp
+Soja|mörk sälta
+Teriyaki|söt glasyr
+Wasabi|grön hetta
+Ingefära|skarp rot
+Vitlök|stark andedräkt
+Lök|tårar
+Potatis|knöl
+Sötpotatis|orange knöl
+Morot|knaprig rot
+Broccoli|grönt träd
+Blomkål|vit bukett
+Zucchini|grön squash
+Aubergine|lila blank
+Paprika|färgglad krisp
+Tomat|saftig röd
+Gurka|grön stav
+Avokado|krämig sten
+Majs|gul kolv
+Ärter|gröna pärlor
+Spenat|bladgrönt
+Ruccola|pepprigt blad
+Sallad|gröna blad
+Coleslaw|kålröra
+Ratatouille|grönsaksgryta
+Gratäng|ugnstäcke
+Janssons frestelse|ansjovis
+Pyttipanna|tärningar
+Raggmunk|potatispannkaka
+Kroppkakor|fyllda bollar
+Palt|tung boll
+Surströmming|stark lukt
+Gravlax|dill
+Smörgåstårta|festmacka
+Räkmacka|lyxig skiva
+Toast Skagen|räkröra
+Gubbröra|ägg och ansjovis
+Kalops|kryddpeppar
+Sjömansbiff|ölgryta
+Blodpudding|lingon
+Pickles|syrligt krisp
+Rödbetor|lila skivor
+Sparris|grön stjälk
+Champinjoner|vita hattar
+Kantareller|skogsguld
+Tryffel|jordig lyx
+Jordgubbar|sommarbär
+Blåbär|blå fingrar
+Hallon|röda småbitar
+Äpple|kärnhus
+Päron|grön kurva
+Banan|gult skal
+Apelsin|citrusklyfta
+Mango|solgul frukt
+Ananas|taggig krona
+Melon|saftig klyfta
+Kiwi|luddigt skal
+Vindruvor|klase
+Citron|sur klyfta
+Lime|grön syra
+Granatäpple|röda kärnor
+Fikon|mjuk frukt
+Dadlar|söt seghet
+Mandel|nötflaga
+Cashew|böjd nöt
+Jordnötter|salta skal
+Pistage|grön nöt
+Popcorn|bioknaster
+Chips|påsprassel
+Ostbågar|orange fingrar
+Lakrits|svart sälta
+Gelébjörn|seg godis
+Polkagris|randig mint
+Mjölkchoklad|mjuk kakao
+Mörk choklad|bitter kakao
+Vit choklad|kakaosmör
+Nougat|nötkräm
+Karamell|hård sötsak
+Kolasås|seg topping
+Vaniljsås|gul kräm
+Sylt|bärburk
+Marmelad|skalbeska
+Honung|gyllene kladd
+Sirap|söt flaska
+Lönnsirap|pannkaksguld
+Jordnötssmör|klibbig nöt
+Nötkräm|chokladmacka
+Knäck|julknaster
+Ischoklad|smälter kallt
+Pepparkaka|kryddkaka
+Lussebulle|saffranskringla
+Lussekatt|gul katt
+Pepparkaksdeg|provsmak
+Risgrynsgröt|kanelö
+Julskinka|senapstäcke
+Köttfärssås|pastakompis
+Kycklingklubba|benhandtag
+Fläskfilé|helgkött
+Entrecôte|marmorerat
+Tofu|sojablock
+Tempeh|fermenterad soja
+Seitan|veteprotein
+Linssoppa|röda linser
+Böngryta|mättande bönor
+Kikärtssallad|gula kulor
+Quinoa|små frön
+Couscous|snabbgryn
+Bulgur|matvete
+Risnudlar|glasig tråd
+Glasnudlar|genomskinliga
+Pasta pesto|grön pasta
+Mac and cheese|ostig pasta
+Pulled pork|draget kött
+Revbensspjäll|kladdiga ben
+Fish and chips|fisk och pommes
+Fisktaco|limefisk
+Calzone|inbakad pizza
+Friterad kyckling|frasigt skinn
+Nuggets|dippbitar
+Pommes frites|saltade stavar
+Lökringar|friterade ringar
+Mozzarellasticks|ostdrag
+Nachotallrik|delad snacks
+Ostfondue|doppa bröd
+Chokladfondue|doppa frukt
+Fruktsallad|skålad frukt
+Smoothiebowl|sked-smoothie
+Açaibowl|lila skål
+Proteinbar|gymgodis
+Energiboll|dadelsnack
+Müsli|frukostmix
+Fralla|rund macka
+Smörgås|pålägg
+Panini|pressad macka
+Wrap|rullad lunch
+Salladswrap|blad runt fyllning
+Sopplunch|varm skål
+Matpaj|frasigt lock
+Quiche|äggpaj
+Gnocchi|potatiskuddar
+Ravioli|fylld pasta
+Tortellini|pastaring
+Cannelloni|fyllda rör
+Minestrone|italiensk soppa
+      `),
+      platser: parseWordPairs(`
+Café|kaffebord
+Restaurang|meny
+Pub|ölkran
+Nattklubb|dansgolv
+Hotell|rumsnyckel
+Vandrarhem|delat kök
+Skola|rastklocka
+Förskola|små stövlar
+Universitet|föreläsning
+Klassrum|bänkrader
+Aula|stor samling
+Sjukhus|vita korridorer
+Vårdcentral|nummerlapp
+Apotek|gröna korset
+Tandläkare|borrljud
+Frisörsalong|klippta toppar
+Nagelsalong|lack
+Spa|badrock
+Simhall|klorlukt
+Badplats|brygga
+Hamn|förtöjning
+Marina|segelmaster
+Färjeterminal|ombordkörning
+Busshållplats|tidtabell
+Tunnelbanestation|rulltrappa
+Spårvagnshållplats|räls i gatan
+Parkeringshus|plan nummer
+Bilverkstad|lyft
+Däckverkstad|hjulbyte
+Biltvätt|skumborstar
+Köpcentrum|många butiker
+Galleria|glasgång
+Livsmedelsbutik|kundvagn
+Bageri|nybakat
+Slakteri|charkdisk
+Fiskdisk|isflak
+Torghandel|markisstånd
+Marknad|prutande
+Loppis|fyndlådor
+Second hand|begagnat
+Bokhandel|hyllrader
+Blomsterbutik|buketter
+Möbelaffär|provsoffa
+Elektronikbutik|skärmar
+Järnaffär|skruvlådor
+Bygghandel|virke
+Trädgårdscenter|plantor
+Lekplats|gungor
+Park|bänkar
+Nationalpark|skyddad natur
+Skog|stigar
+Äng|högt gräs
+Vandringsled|färgmarkering
+Utsiktsplats|vid vy
+Fjällstuga|braskamin
+Vindskydd|öppen vägg
+Rastplats|picknickbord
+Motorväg|höga hastigheter
+Rondell|cirkulerar
+Bro|över vatten
+Tunnel|bergvägg
+Färja|kort sjöresa
+Ö|vatten runt
+Halvö|nästan ö
+Fyr|blinkande ljus
+Klippa|brant sten
+Grotta|mörkt hål
+Vattenfall|fallande brus
+Sjö|stilla vatten
+Å|liten älv
+Flod|bred ström
+Kanal|grävd vattenväg
+Slott|torn
+Herrgård|allé
+Kyrka|klocktorn
+Kapell|litet altare
+Moské|minaret
+Synagoga|bönehus
+Tempel|helig plats
+Kyrkogård|gravstenar
+Stadshus|kommunhus
+Tingsrätt|rättssal
+Polisstation|anmälan
+Brandstation|utryckning
+Fängelse|galler
+Ambassad|främmande flagga
+Biblioteksbuss|rullande böcker
+Postkontor|paketkö
+Bankkontor|rådgivare
+Försäkringskassa|ärendenummer
+Arbetsförmedling|jobbcoach
+Skatteverket|personnummer
+Migrationsverk|uppehållstillstånd
+Rådhus|ceremoni
+Turistbyrå|kartställ
+Informationsdisk|frågor
+Konserthus|akustik
+Teater|ridå
+Operahus|aria
+Arena|publikhav
+Stadion|läktare
+Idrottshall|linjer på golvet
+Fotbollsplan|mittcirkel
+Tennisbana|nät
+Golfbana|fairway
+Padelhall|glasväggar
+Bowlinghall|käglor
+Skatepark|ramper
+Klätterhall|färgade grepp
+Ridskola|sadlar
+Travbana|sulky
+Skjutbana|hörselskydd
+Dansstudio|spegelvägg
+Yogastudio|mattor
+Musikstudio|ljudbås
+Replokal|förstärkare
+Ateljé|färgstänk
+Fotostudio|blixtljus
+Verkstad|olja och verktyg
+Lager|pallar
+Fabrik|produktionslinje
+Sågverk|trädoft
+Mejeri|mjölktankar
+Bryggeri|jästank
+Bagerikök|mjöldamm
+Restaurangkök|servicebricka
+Personalrum|kaffemaskin
+Konferensrum|projektor
+Mötesrum|runt bord
+Reception|incheckning
+Väntrum|tidningar
+Omklädningsrum|skåp
+Tvättstuga|bokningstavla
+Källare|betonggolv
+Vind|snedtak
+Garage|port
+Förråd|kartonger
+Balkong|räcke
+Innergård|cykelställ
+Takterrass|utsikt
+Uterum|glasvägg
+Växthus|fuktig värme
+Kolonilott|odlingsruta
+Bondgård|grusplan
+Stall|hästlukt
+Ladugård|hö
+Hönshus|kackel
+Växthusodling|rader av plantor
+Åker|plogspår
+Äppelträdgård|fruktträd
+Vingård|druvrankor
+Djurpark|inhägnader
+Akvariehall|glasbassänger
+Terrarium|värmelampa
+Fjärilshus|tropisk luft
+Planetarium|stjärntak
+Observatorium|teleskop
+Botanisk trädgård|växtsamling
+Zoo|djurskyltar
+Safari|jeep
+Cirkus|manege
+Tivoli|snurrande ljus
+Äventyrsbad|vattenrutsch
+Vattenpark|plask
+Lekland|bollhav
+Escape room|låsta ledtrådar
+Laserdome|neonvästar
+Paintballbana|färgstänk
+Flyghangar|stora portar
+Kontrolltorn|flygledare
+Landningsbana|vita streck
+Tull|väskkontroll
+Bagageband|rullande väskor
+Hotellobby|receptionsdisk
+Hotellrum|minibar
+Vandrarhemskök|märkta matlådor
+Stugby|små hus
+Sommarstuga|sjötomt
+Fjällhotell|pjäxor
+Campingplats|servicehus
+Husvagnsplats|elstolpe
+Tältplats|markpinnar
+Grillplats|eldring
+Badbrygga|steg ner
+Bastu|het ånga
+Omklädningshytt|draperi
+Livräddartorn|röd flagga
+Strandpromenad|glasskiosker
+Pir|ut i vattnet
+Kaj|förtöjda båtar
+Varv|båtbygge
+Båthus|sjönära förråd
+Tunnelbana|underjord
+Pendeltåg|förortsräls
+Spårvagn|pling i gatan
+Bussdepå|fordonsrad
+Taxistolpe|gul skylt
+Cykelparkering|låsta ramar
+Elbilsladdare|laddkabel
+Trafikskola|övningsskylt
+Övningskörningsbana|koner
+Gokartbana|små motorer
+Motorbana|asfaltskurvor
+Rastgård|hundspring
+Hundpark|kopplöst
+Hunddagis|skäll
+Katthem|adoption
+Veterinärklinik|djurdoktor
+Djurbutik|akvariehylla
+Läsesal|viskningar
+Studierum|grupplugg
+Serverrum|kallt surr
+Kontorslandskap|skrivbordsöar
+Chefskontor|stängd dörr
+Kopieringsrum|pappersstopp
+Kaffehörna|muggar
+Matsal|lunchbricka
+Fritidsgård|häng efter skolan
+Ungdomsgård|pingisbord
+Dagcenter|vardagsstöd
+Äldreboende|gemensam matsal
+Gruppboende|personallarm
+Förlossning|nyfödd
+Akutmottagning|triage
+Intensivvård|övervakning
+Operationssal|sterilt ljus
+Röntgen|blyförkläde
+Laboratorium|provrör
+Blodcentral|donation
+Vaccinationsmottagning|spruta
+Psykologmottagning|samtalsrum
+Massagestudio|bänk
+Naprapat|knäckljud
+Optiker|syntavla
+Tatueringsstudio|nålmaskin
+Piercingstudio|steril tång
+Bröllopslokal|dukade bord
+Festlokal|högtalare
+Konferensanläggning|namnskyltar
+Mässhall|montrar
+Utställningshall|hängda verk
+      `),
+      sverige: parseWordPairs(`
+Lucia|ljuskrona
+Nobelbankett|blå hallen
+Surströmmingspremiär|burköppning
+Semmeldagen|gräddlock
+Kanelbullens dag|pärlsocker
+Lördagsgodis|godispåse
+Fredagsmys|soffchips
+Lagom|inte för mycket
+Ombudsman|svenskt låneord
+Smörgåsbord|många fat
+Räksmörgås|handskalade
+Lingonsylt|röd klick
+Falukorv|röd ring
+Ostkaka|småländsk dessert
+Västerbottensost|stark ost
+Messmör|brun tub
+Filmjölk|syrlig frukost
+Husmanskost|vardagsklassiker
+Dalahäst|målad träfigur
+Falu rödfärg|röd stuga
+Kurbits|målade blommor
+Kåsa|träskopa
+Norrsken|grönt himmelljus
+Midnattssol|nattljus
+Stockholm|vattenstad
+Göteborg|ordvits
+Malmö|turning torso
+Uppsala|studentmössa
+Lund|universitetsstad
+Kiruna|flyttad stad
+Visby|ringmur
+Kalmar|slott vid sund
+Örebro|svartån
+Västerås|gurkstaden
+Umeå|björkarnas stad
+Luleå|isväg
+Sundsvall|stenstad
+Karlstad|solsymbol
+Jönköping|tändstickor
+Norrköping|industrilandskap
+Helsingborg|Kärnan
+Halmstad|sommarstad
+Borås|regnrykte
+Linköping|flygmuseum
+Gävle|julbock
+Falun|koppargruva
+Mora|målgång
+Åre|skidby
+Gotland|raukar
+Öland|alvar
+Lappland|vidder
+Dalarna|folkdräkt
+Skåne|rapsfält
+Småland|glasrike
+Bohuslän|klippor
+Värmland|skogssjöar
+Jämtland|fjällvind
+Norrbotten|norrsken
+Västerbotten|ostland
+Södermanland|slottstäthet
+Uppland|runstenar
+Västergötland|platåberg
+Östergötland|kanalbygd
+Halland|sandstränder
+Blekinge|trädgård
+Hälsingland|gårdar
+Gästrikland|järnbruk
+Medelpad|älvdal
+Ångermanland|höga kusten
+Härjedalen|fjällbyar
+Österlen|äppelodling
+Kosterhavet|marinpark
+Höga kusten|landhöjning
+Kebnekaise|högst upp
+Siljan|dalahjärta
+Vänern|största sjön
+Vättern|djup sjö
+Mälaren|slottsvatten
+Göta kanal|slussar
+Öresundsbron|sundspassage
+Globen|vit sfär
+Stadshuset|gyllene salen
+Vasamuseet|bärgat skepp
+Drottningholm|kungligt slott
+Gripsholms slott|porträttsamling
+Abisko|norrskenshimmel
+Icehotel|isrum
+Ales stenar|skeppssättning
+Feskekôrka|fiskhall
+Liseberg|kaninmaskot
+Gröna Lund|berg-och-dal
+Skansen|friluftsmuseum
+Kolmården|linbana
+Kungsleden|fjällvandring
+Sarek|vildmark
+Julbord|många sillar
+Advent|fyra ljus
+Luciafirande|vita särkar
+Tomte|röd luva
+Påskkärring|målade kinder
+Majbrasa|vårflamma
+Studentflak|tutande lastbil
+Skolavslutning|blomstertid
+Allsång|gemensam refräng
+Dansbandsvecka|bugg
+Nobelmiddag|pristagare
+Surströmming|jäst fisk
+Ärtsoppa torsdag|punsch
+Trettondedag|röd dag
+Sportlov|skidvecka
+Höstlov|pumpatid
+Midsommarkrans|blommor i håret
+Små grodorna|hoppdans
+Majstång|lövad stolpe
+Nubbe|litet glas
+Julbock|halmfigur
+Julkalender|decemberluckor
+Tomtebloss|gnistor
+Adventsljusstake|fönsterljus
+Personnummer|tio siffror
+Föräldraledighet|barnmånad
+VAB|sjukt barn
+Swish|mobilbetalning
+BankID|digital legitimation
+E-legitimation|säker inloggning
+Pantautomat|burkretur
+Kölapp|nummer i handen
+Föreningsliv|ideella möten
+Bostadskö|väntetid
+Hyresrätt|månadshyra
+Bostadsrätt|förening
+Fackförbund|arbetsstöd
+Kollektivavtal|gemensamma villkor
+Studiebidrag|skolpeng
+CSN|studielån
+A-kassa|mellan jobb
+Förskoleklass|sexåringar
+Folkbokföring|adressregister
+Högkostnadsskydd|tak för vård
+Skatteåterbäring|pengar tillbaka
+Deklaration|vårblankett
+Rotavdrag|renoveringsrabatt
+Ränteavdrag|bolånshjälp
+Mörker i november|tidig kväll
+Polarnatt|ingen sol
+Snöslask|grå vinter
+Ishalka|broddar
+Myggsommar|surrande kväll
+Blåbärsskog|blå hink
+Lingonris|röda bär
+Kantarellställe|hemlig plats
+Gran|juldoft
+Björk|vit stam
+Tall|barrdoft
+Älg|skogskung
+Ren|fjällhjord
+Lodjur|tofsöron
+Varg|yl
+Bäver|dammbygge
+Tjäder|skogsfågel
+Havsörn|stora vingar
+Röda stugor|vita knutar
+Bastu|varm träbänk
+Bastuflotte|sjöånga
+Sommarregn|doft av asfalt
+Vårflod|smältvatten
+Tjäle|frusen mark
+ABBA|glittrig pop
+Avicii|dansmelodi
+Pippi Långstrump|stark flicka
+Emil i Lönneberga|hyss
+Astrid Lindgren|sagovärld
+Ingmar Bergman|svartvitt allvar
+Strindberg|röda rummet
+Selma Lagerlöf|Nils Holgersson
+Augustpriset|bokpris
+Barnkanalen|barn-tv
+Bolibompa|drakprogram
+På spåret|resfrågor
+Så ska det låta|pianotävling
+Allsång på Skansen|sommarscen
+Kalle Anka på julafton|tre klockan
+Tre Kronor|hockeylandslag
+Blågult|flagfärger
+Folkdräkt|högtidskläder
+Kånken|fyrkantig ryggsäck
+Platta paket|möbelkartong
+IKEA|möbelvaruhus
+Tetra Pak|förpackning
+Volvo|säker bil
+Saab|flyg och bil
+Vätternrundan|cykelsjö
+Lidingöloppet|terrängklassiker
+Stockholm Marathon|stadslopp
+O-Ringen|orienteringsvecka
+Elitloppet|travfest
+Finnkampen|grannkamp
+Svenska cupen|pokalfotboll
+Allsvenskan|högsta serien
+SHL|hockeyliga
+Bandyfinal|is med boll
+Innebandy|plastklubba
+Längdskidor|spår
+Orientering|karta och kompass
+Skidskytte|gevär och skidor
+Curling|sten på is
+Brännboll|skolgårdsslag
+Kubb|träpinnar
+Varpa|kaststen
+Skridskois|blank sjö
+Vinterbad|isvak
+Motionsspår|skogsslinga
+Elljusspår|lampor i skogen
+Friluftsdag|utomhusskola
+Tipspromenad|frågeslinga
+Fäbod|sommarvall
+Timmerstuga|stockväggar
+Torp|litet hus
+Prästost|mild svensk ost
+Lutfisk|lutad fisk
+Nyponsoppa|orange soppa
+Saftkalas|barnbord
+Folkpark|dansbana
+Bygdegård|lokal fest
+Motionslopp|nummerlapp
+Husvagnssemester|rullande sommar
+Skogspromenad|barr under skor
+Sjöbod|rött vid vattnet
+Sommarpratare|radiomonolog
+P1|pratkanal
+P3|ung radio
+SVT|public service
+SR|radiohuset
+Lördagsöppet|helgbutik
+Rösträtt|valkuvert
+Valkompass|partitest
+Vallokal|skärmar och kuvert
+Jantelagen|stick inte ut
+Folkhemmet|välfärdsidé
+      `),
+      film: parseWordPairs(`
+Drama|starka känslor
+Komedi|skratt
+Thriller|nerv
+Fantasy|magi
+Western|dammig duell
+Krigsfilm|frontlinje
+Musikal|sångnummer
+Kriminalserie|brottsfall
+Miniserie|få avsnitt
+Såpopera|evigt drama
+Barnprogram|färgglad studio
+Nyhetsprogram|ankarbord
+Sportstudio|matchsnack
+Matlagningsprogram|provsmakning
+Renoveringsprogram|före och efter
+Dejtingprogram|rosceremoni
+Tävlingsprogram|poängtavla
+Gameshow|snabb buzzer
+Late night|skrivbordsskämt
+Sketchprogram|korta scener
+Standup-special|ensam mikrofon
+True crime|verkligt brott
+Naturdokumentär|djurkamera
+Reseprogram|ny destination
+Historiedokumentär|arkivbilder
+Regissör|säger action
+Producent|fixar budget
+Manusförfattare|skriver repliker
+Skådespelare|tar roll
+Statist|bakgrundsfigur
+Kameraman|följer bilden
+Ljudtekniker|bom-mikrofon
+Klippare|sätter tempot
+Kostymör|kläder för roll
+Maskör|sminkar ålder
+Stuntman|farligt hopp
+Caster|väljer ansikten
+Scenograf|bygger värld
+Rekvisitör|hittar prylar
+Animatör|rörliga bilder
+Röstskådespelare|pratar figur
+Dubbare|nytt språk
+Programledare|håller ihop
+Nyhetsankare|läser rubriker
+Reporter|ute på plats
+Fotograf|tar bilden
+Showrunner|styr serien
+Filmkompositör|tema-melodi
+Biografmaskinist|startar salong
+Närbild|ansikte nära
+Helbild|hela kroppen
+Panorering|sveper sidan
+Zoom|närmare bild
+Slow motion|långsam rörelse
+Time lapse|snabb tid
+Green screen|grön bakgrund
+CGI|digital effekt
+Praktisk effekt|på riktigt
+Explosion|eldboll
+Jumpscare|plötsligt ryck
+Cliffhanger|slutar mitt i
+Plot twist|vändning
+Flashback|tillbaka i tiden
+Voiceover|röst ovanpå
+Montage|många klipp
+Intro|början
+Outro|slutskylt
+Vinjett|signaturstart
+Eftertexter|namnrullning
+Trailer|lockande klipp
+Teaser|kort smakprov
+Pilotavsnitt|teststart
+Säsongsfinal|sista avsnittet
+Hjälte|räddar dagen
+Skurk|ond plan
+Sidekick|trofast vän
+Mentor|vis gammal
+Anti-hjälte|smutsig hjälte
+Kärleksintresse|romantisk blick
+Hemlig identitet|maskerat liv
+Dubbelgångare|samma ansikte
+Förrädare|byter sida
+Räddningsuppdrag|hämta hem
+Heist|kupp
+Road movie|resa på väg
+Triangeldrama|tre hjärtan
+Förbjuden kärlek|hemlig romans
+Tidshopp|senare eller förr
+Multiversum|många världar
+Rymdskepp|stjärnresa
+Drakägg|fantasyfynd
+Trollstav|magiskt verktyg
+Zombie|levande död
+Vampyr|blodtörst
+Varulv|fullmåne
+Spöke|genom väggar
+Monster|stor skräck
+TV-kontroll|zappa
+Playknapp|starta klipp
+Pausknapp|frys bild
+Undertext|läs repliker
+Dubbning|ny röst
+Binge|många avsnitt
+Streamingtjänst|serieapp
+Premiär|första visning
+Repris|visas igen
+Kanalpaket|många kanaler
+Parabol|tallrik på tak
+TV-tablå|kvällsschema
+Ljudspår|separat ljud
+Bildformat|svarta kanter
+Reklamavbrott|paus för produkter
+Spoiler|avslöjar slutet
+Recension|tycktitt
+Betyg|stjärnor
+Filmfestival|visningsfest
+Röda mattan|fotoblixtar
+Oscarsgala|guldstatyett
+Guldbaggen|svensk filmpris
+Emmy|tv-pris
+Golden Globe|galapris
+Rymdbas|luftsluss
+Medeltidsborg|stenmurar
+High school|skåpkorridor
+Sjukhusserie|läkarteam
+Advokatbyrå|fallmappar
+Nyhetsredaktion|deadline
+Diner|kaffekanna
+Motel|neonskylt
+Casino|marker
+Ubåt|under ytan
+Piratskepp|svart flagg
+Spökhus|knarr
+Öde ö|palmer ensam
+Bunker|betongskydd
+Kungarike|tron
+Framtidsstad|neon
+Postapokalyps|efter katastrofen
+Vildmark|överlevnad
+Kungahov|intriger
+Förhörsrum|ensam lampa
+Rättegångsscen|objektion
+Krigszon|rök och larm
+Rymdkoloni|kupoler
+Drömsekvens|suddig logik
+Ljussabel|lysande klinga
+Trollring|magisk cirkel
+Detektivbricka|polisleg
+Mikrofon|intervju
+Filmkamera|rullande tagning
+Klappa|tagningstavla
+Manus|replikhäfte
+Storyboard|ritade rutor
+Megafon|ropa action
+Regissörsstol|namn på rygg
+Filmrulle|celluloid
+Popcornhink|salongsnacks
+3D-glasögon|djup i bilden
+Statyett|prispjäs
+Kostymdrama|gamla kläder
+Peruk|falskt hår
+Blodkapsel|låtsasblod
+Lösnäsa|masksmink
+Gummimask|förvandlat ansikte
+Rekvisitavapen|ofarlig pistol
+Låtsaspengar|prop-sedlar
+Magisk bok|förbjudna sidor
+Skattkarta|kryss
+Hemligt brev|vaxsigill
+Avsnitt|del av serie
+Säsong|avsnittspaket
+Spin-off|sidoberättelse
+Remake|gjord igen
+Reboot|ny start
+Prequel|före början
+Sequel|fortsättning
+Cameo|kort gäst
+Easter egg|gömd blinkning
+Fanservice|för fansen
+Kanon|officiell handling
+Fandom|hängivna fans
+Ship|önskat par
+Meme-scen|delbar bild
+Kultfilm|troget följe
+B-film|billig charm
+Blockbuster|storfilm
+Indie-film|liten produktion
+Arthouse|smal salong
+Mockumentär|fejk-dokumentär
+Found footage|upphittad film
+Film noir|skuggig deckare
+Slasher|knivskräck
+Creature feature|monsterfilm
+Första tagningen|tag ett
+Omklipp|ny version
+Felreplik|säger fel
+Blooper|misslyckat roligt
+Skrattspår|inspelat skratt
+Publikvärmare|peppar salong
+Livesändning|sker nu
+Direktsändning|utan fördröjning
+Inspelning|kamera på
+Casting|rollval
+Audition|provscen
+Repetition|övar om
+Premiärkväll|röd matta
+Pressvisning|kritiker först
+Rörelseoskärpa|suddig fart
+Drönarbild|luftfoto
+Handkamera|skakig närhet
+Mörkläggning|svart salong
+Ljusrigg|lampor ovanför
+Kuliss|falsk vägg
+Ljudläggning|sätter ljud
+Foley|gjorda steg
+Färgkorrigering|tonar bilden
+Textplatta|skylt i bild
+Huvudroll|mest fokus
+Biroll|näst intill
+Gästroll|kort besök
+Ensemble|många roller
+Berättarröst|guidar handling
+Monolog|ensamt tal
+Dialog|replikbyte
+Replik|sagd rad
+Scenbyte|ny plats
+Akt|del av pjäs
+Pilot|första test
+Synopsis|kort handling
+Pitch|säljer idén
+Logline|en mening
+Manusmöte|skrivbordssnack
+Table read|läser runt bord
+Skrivrum|seriehjärna
+Story arc|lång utveckling
+Character arc|personresa
+MacGuffin|viktig pryl
+Red herring|falskt spår
+Chekhovs gevär|senare payoff
+Deus ex machina|plötslig räddning
+Final girl|sista överlevare
+Villain origin|skurkens början
+      `),
+      jobb: parseWordPairs(`
+Sjuksköterska|vårdpuls
+Undersköterska|nära omsorg
+Ambulanssjukvårdare|blåljusvård
+Tandläkare|munspegel
+Veterinär|djurdoktor
+Psykolog|samtalsstol
+Fysioterapeut|rehabövning
+Apotekare|läkemedelshylla
+Barnmorska|nyfödd hjälp
+Optiker|syntest
+Receptionist|välkomstdisk
+Administratör|ordnar papper
+Ekonom|siffror
+Revisor|granskar kvitton
+Controller|budgetkoll
+HR-specialist|personalfrågor
+Rekryterare|hittar kandidater
+Projektledare|håller tidsplan
+Produktchef|prioriterar funktioner
+Designer|formar idé
+UX-designer|användarflöde
+Grafisk formgivare|visuell profil
+Illustratör|ritar bilder
+Copywriter|säljande text
+Marknadsförare|kampanj
+Säljare|stänger affär
+Kundtjänst|löser ärenden
+Supporttekniker|felsöker
+Systemutvecklare|bygger kod
+Dataanalytiker|mönster i siffror
+AI-specialist|modellträning
+IT-chef|digitalt ansvar
+Nätverkstekniker|kablar och routrar
+Testare|hittar buggar
+Devops|drift och kod
+Säkerhetsanalytiker|hotjakt
+Databasadmin|tabellvård
+Scrum master|daglig standup
+Produktägare|backlogg
+Affärsutvecklare|nya intäkter
+Konsult|uthyrd expert
+Coach|ställer frågor
+Jurist|paragrafer
+Advokat|försvarar klient
+Domare|klubba
+Åklagare|väcker åtal
+Polis|uniform
+Kriminaltekniker|spårsäkring
+Väktare|rond
+Militär|ordergivning
+Tulltjänsteman|gränskoll
+Kriminalvårdare|låsta avdelningar
+Socialsekreterare|ärendeplan
+Kurator|stöd samtal
+Präst|predikan
+Begravningsrådgivare|ceremoni
+Politiker|beslutssal
+Diplomat|förhandling
+Tolk|byter språk
+Översättare|text på nytt språk
+Bibliotekarie|lånekort
+Forskare|hypotes
+Doktorand|avhandling
+Professor|föreläsningstitel
+Laborant|provrör
+Ingenjör|lösning
+Byggingenjör|ritning och betong
+Civilingenjör|teknisk examen
+Mekaniker|oljiga händer
+Bilmekaniker|motorhuv
+Lastbilschaufför|långtradare
+Busschaufför|linjekarta
+Lokförare|räls
+Taxichaufför|taxameter
+Budförare|leveransrunda
+Cykelbud|snabb väska
+Lagerarbetare|pallrad
+Truckförare|gafflar
+Logistiker|flöden
+Inköpare|avtal och pris
+Speditör|fraktpapper
+Sjökapten|brygga
+Matros|däckarbete
+Flygledare|radarskärm
+Kabinpersonal|säkerhetsdemo
+Markpersonal|bagagevagn
+Reseledare|utflyktslista
+Hotellchef|beläggning
+Hovmästare|bordsplacering
+Servitör|brickbalans
+Bartender|shaker
+Sommelier|vinparning
+Bagare|degklocka
+Konditor|tårtsprits
+Slaktare|styckning
+Fiskhandlare|isad disk
+Bonde|traktor
+Trädgårdsmästare|sekatör
+Florist|binder bukett
+Skogshuggare|motorsåg
+Parkarbetare|lövräfsa
+Djurskötare|foderhink
+Hästskötare|mockning
+Hundfrisör|pälsbad
+Fotograf|slutarklick
+Videograf|rörlig bild
+Musiker|instrumentfodral
+Sångare|röstprov
+Skådespelare|rolltolkning
+Dansare|scensteg
+Koreograf|rörelsemönster
+Regissör|scenanvisning
+Producent|fixar helheten
+Ljudtekniker|mixbord
+Ljustekniker|spotlight
+Scenbyggare|kulissvirke
+Eventkoordinator|körschema
+Bröllopsplanerare|bordslista
+Personlig tränare|reps och set
+Massör|knådar muskler
+Naprapat|ryggbehandling
+Yogainstruktör|andningsklass
+Simlärare|bentag
+Fotbollsdomare|visselpipa
+Fotbollstränare|taktiktavla
+Idrottslärare|gympasal
+Fritidsledare|aktivitetsrum
+Förskollärare|samling
+Barnskötare|utelek
+Specialpedagog|extra stöd
+Rektor|skolans chef
+Skolsköterska|hälsokontroll
+Studiehandledare|läxstöd
+Studievägledare|framtidsval
+Trafiklärare|dubbelkommando
+Cykelmekaniker|kedjeolja
+Rörmokare|rörkoppling
+Snickare|tumstock
+Målare|roller
+Plattsättare|kakel
+Murare|bruk
+Takläggare|takpannor
+Golvläggare|parkett
+Svetsare|gnistor
+CNC-operatör|styrd fräs
+Maskinoperatör|startknapp
+Montör|sätter ihop
+Elektronikmontör|kretskort
+Tryckare|pressmaskin
+Textilarbetare|sömmar
+Skräddare|måttband
+Skomakare|sula
+Guldsmed|ädelmetall
+Urmakare|små kuggar
+Keramiker|drejskiva
+Möbelsnickare|hyvelspån
+Glasblåsare|het bubbla
+Gruvarbetare|hjälmlampa
+Gruvingenjör|bergplan
+Vindkraftstekniker|turbinservice
+Solcellsmontör|takpanel
+Energiingenjör|effektkoll
+Miljöinspektör|kontrollerar utsläpp
+Livsmedelsinspektör|hygienkoll
+Städare|moppvagn
+Lokalvårdare|rena ytor
+Fönsterputsare|skrapa
+Vaktmästare|fixar allt
+Fastighetsskötare|husservice
+Bovärd|hyresgästkontakt
+Brevbärare|postrunda
+Paketsorterare|streckkod
+Kassör|scannerpip
+Butiksbiträde|hyllplock
+Varuhuschef|butiksdrift
+Visual merchandiser|skyltfönster
+E-handelsansvarig|webborder
+Applikationskonsult|systemråd
+Content manager|publiceringsplan
+Community manager|svarar följare
+Influencer|sponsrat inlägg
+Poddproducent|klipper samtal
+Redaktör|väljer rubrik
+Förläggare|bokbeslut
+Bokbindare|rygglim
+Tryckeriarbetare|pappersmatning
+Arkivarie|ordnar samling
+Museipedagog|visar utställning
+Guide|berättar vägen
+Turistvärd|besökstips
+Flygvärd|kabinservice
+Spa-terapeut|behandlingsrum
+Makeupartist|borstset
+Chef|beslutsansvar
+Teamledare|samlar gruppen
+Praktikant|lär på plats
+Trainee|startprogram
+Frilansare|egna uppdrag
+Entreprenör|startar bolag
+Egenföretagare|egen faktura
+Konsultchef|belägger konsulter
+Kontorsassistent|fixar kontor
+Sekreterare|protokoll
+Löneadministratör|lönespec
+Planerare|schemaöversikt
+Schemaläggare|passpussel
+Arbetsledare|fördelar jobb
+Skyddsombud|säker arbetsmiljö
+Fackrepresentant|medlemsröst
+Mentor|erfaren stöd
+Handledare|visar arbetet
+Internrevisor|granskar inifrån
+Kvalitetsansvarig|checklistor
+Produktionschef|linjeansvar
+Drifttekniker|håller igång
+Servicetekniker|åker på fel
+Supportchef|ärendekö
+Kundansvarig|relationer
+CV|meritlista
+Personligt brev|säljer sig själv
+Jobbintervju|svåra frågor
+Provanställning|testperiod
+Onboarding|ny på jobbet
+Deadline|sista datum
+Mötesbokning|kalenderlänk
+Teamsmöte|digital ruta
+Kaffepaus|maskinsnack
+Lunchrast|matlåda
+Övertid|sen kväll
+Sjukskrivning|läkarintyg
+Semesteransökan|ledig ruta
+Tjänsteresa|jobbresa
+Konferens|namnbricka
+Workshop|post-it-vägg
+Presentation|slides
+Rapport|samlad text
+Faktura|betalningskrav
+Tidrapport|timmar
+Lönesamtal|påslag
+Utvecklingssamtal|mål framåt
+Arbetsmiljö|må bra på jobbet
+Företagskort|jobbutlägg
+      `),
+      sport: parseWordPairs(`
+Volleyboll|nätduell
+Beachvolley|sandserve
+Rugby|oval boll
+Amerikansk fotboll|hjälm och yards
+Baseboll|slagträ
+Softboll|stor boll
+Cricket|wicket
+Badminton|fjäderboll
+Squash|väggspel
+Bordtennis|pingisstuds
+Pickleball|plastboll
+Innebandy|hålklubba
+Bandy|isfotboll
+Lacrosse|nätklubba
+Vattenpolo|bassängkamp
+Rodd|årtag
+Kanot|paddel
+Kajak|sittbrunn
+Segling|vindtag
+Surfing|våg
+Vindsurfing|segelbräda
+Kitesurfing|drake
+Dykning|luftflaska
+Snorkling|andningsrör
+Friidrott|stadiongrenar
+Sprint|kort distans
+Maraton|42195 meter
+Höjdhopp|ribba upp
+Längdhopp|sandgrop
+Stavhopp|stav över ribba
+Kulstötning|tung kula
+Diskus|snurrkast
+Spjut|kastspets
+Häcklöpning|hinder i rad
+Stafett|växling
+Terränglöpning|lerig bana
+Orientering|kontrollskärm
+Triathlon|tre sporter
+Duathlon|spring och cykla
+Cykling|trampa
+Mountainbike|stigcykel
+BMX|små hjul
+Gravelbike|grusväg
+Spinning|cykelsal
+Skidor|glid
+Längdskidor|spår
+Alpint|portar
+Snowboard|bräda i backe
+Skidskytte|skjutmatta
+Backhoppning|flygande skidor
+Freestyle|trick i snö
+Curling|borstar
+Konståkning|piruett
+Skridskor|stål på is
+Rullskridskor|hjul på fötter
+Roller derby|tackling på hjul
+Gymnastik|matta och bom
+Truppgymnastik|synkade volter
+Parkour|stadshopp
+Crossfit|wod
+Tyngdlyftning|ryck
+Styrkelyft|tre lyft
+Bodybuilding|posing
+Boxning|ringhörna
+Kickboxning|sparkar och slag
+Muay thai|armbågar
+Brottning|grepp
+Judo|kast
+Karate|kata
+Taekwondo|höga sparkar
+Fäktning|värja
+Bågskytte|sträng
+Skytte|träffbild
+Ridning|stigbygel
+Dressyr|precisa rörelser
+Hoppning|hinderbana
+Polo|hästklubba
+Galopp|snabb bana
+Trav|sulky
+Biljard|kö
+Snooker|rött och färg
+Dart|pil mot tavla
+Bowling|kägelrad
+Boule|grusklot
+Discgolf|korgkast
+Frisbee|flygande disc
+E-sport|digital match
+Schack|64 rutor
+Bridge|kortbud
+Motorsport|motorvarv
+Formel 1|snabba depåer
+Rally|gruskurvor
+Speedway|sladd på oval
+Motocross|lerhopp
+Gokart|mini-racer
+Dragracing|raksträcka
+Mål|nätkänning
+Assist|pass till poäng
+Straff|ensamt läge
+Frispark|stillaliggande boll
+Hörna|flagga i hörnet
+Inkast|över huvudet
+Offside|för långt fram
+Tackling|kroppskontakt
+Tekning|startduell
+Powerplay|en mer
+Icing|för långt skott
+Slagskott|hård puck
+Layup|nära korgen
+Dunk|trycker ner
+Trepoängare|långskott
+Retur|missad boll
+Serve|första slaget
+Ess|otagbar serve
+Breakboll|chans att bryta
+Volley|slag i luften
+Forehand|öppen sida
+Backhand|bakre sida
+Smash|hårt ovanifrån
+Slice|skruvad skärning
+Putta|kort golfslag
+Chip|liten lyftning
+Bunker|sandfälla
+Green|puttyta
+Fairway|klippt mitt
+Birdie|ett under
+Bogey|ett över
+Hole-in-one|rakt i koppen
+Knockout|utslagen
+Rond|kampvarv
+Domslut|visselbeslut
+Gult kort|varning
+Rött kort|utvisning
+Avspark|matchstart
+Förlängning|extra tid
+Sudden death|nästa mål vinner
+Time out|kort paus
+Halvtid|mittpaus
+Slutspel|vinna eller ut
+Gruppspel|tabell först
+Final|sista matchen
+Derby|lokal rivalitet
+Tabell|poänglista
+Serieledning|överst
+Fotbollsskor|dobbar
+Benskydd|smalbensskydd
+Målvaktshandskar|grepp i mål
+Klubba|slår boll
+Puck|svart trissa
+Boll|rund pryl
+Basketkorg|ring och nät
+Tennisracket|strängyta
+Padelracket|hål i racket
+Golfklubba|slagjärn
+Löparskor|dämpning
+Startnummer|bröstlapp
+Simglasögon|klorfritt seende
+Badmössa|strömlinje
+Tävlingshjälm|säker fart
+Cykeltröja|bakfickor
+Skidstavar|staka
+Pjäxor|hårda skor
+Snowboardbindning|fastspänd bräda
+Klättersele|rep runt höften
+Kritpåse|torrt grepp
+Yogamatta|mjuk zon
+Hopprep|snabba fötter
+Hantel|enarmsvikt
+Kettlebell|järnkula
+Skivstång|lång vikt
+Viktplatta|rund tyngd
+Boxningshandskar|vadderade nävar
+Tandskydd|munskydd
+Brottarmatta|mjuk kamp
+Judodräkt|vit gi
+Fäktmask|metallnät
+Pilbåge|spänd sträng
+Måltavla|träffringar
+Dartpil|liten pil
+Bowlingklot|fingerhål
+Bouleklot|metallklot
+Frisbeedisc|kastskiva
+Schackklocka|dubbel timer
+Gamingmus|snabba klick
+Simfenor|grodfötter
+Våtdräkt|neopren
+Segel|fångar vind
+Flytväst|håller uppe
+Kajakpaddel|dubbla blad
+Roddåra|långa tag
+Hästsadel|sits på häst
+Ridstövlar|höga stövlar
+Arena|stort dån
+Läktare|sittande publik
+Skadelista|borta från match
+Uppvärmning|starta kroppen
+Nedvarvning|lugna ner
+Intervaller|snabba block
+Personbästa|eget rekord
+Rekord|bäst hittills
+Medalj|hängs runt halsen
+Pokal|lyfts upp
+Prispall|etta tvåa trea
+Nationalsång|före final
+Hejaklack|ramsor
+Coach|sidlinjeråd
+Kapten|lagledare
+Sportdomare|visselpipa
+Linjedomare|flagga
+VAR|videokoll
+Träningsläger|lägerpass
+Matchtröja|nummer på rygg
+Bortalag|resande lag
+Hemmalag|egen arena
+Säsongskort|alla matcher
+Planka|stillastående styrka
+Burpee|hela kroppen
+Knäböj|djup sittning
+Marklyft|lyft från golv
+Bänkpress|pressa upp
+Armhävning|bröst mot golv
+Situp|mage upp
+Pullup|haka över stång
+Utfall|steg och böj
+Stretching|längre muskler
+Foam roller|rulla muskler
+Pulsband|hjärtslag
+Stegräknare|räknar steg
+Kalorier|energi
+Mjölksyra|brännande ben
+Syreupptag|konditionsmått
+Vätskepaus|drickstopp
+Energigel|söt tub
+Dopingtest|rent prov
+Vägning|före kamp
+Seedning|startplacering
+Kvalgräns|måste klara
+Startfålla|väntande löpare
+Målfoto|millimeterseger
+      `),
+      kaos: parseWordPairs(`
+Bränd middag|svart botten
+Översvämmat badrum|vatten överallt
+Borttappade nycklar|letar i fickor
+Urladdad mobil|svart skärm
+Sprucken skärm|spindelnät
+Fel buss|okänd hållplats
+Inställt tåg|röd text
+Dubbelbokning|två planer
+Missad födelsedag|glömd gratulation
+Glömd plånbok|tom ficka
+Trasig dragkedja|fastnar halvvägs
+Hål i strumpan|tå ute
+Kaffefläck|brun ring
+Mjölk över bordet|vit pöl
+Bränd popcorn|röklukt
+Falskt alarm|onödig panik
+Brandvarnarpip|lågt batteri
+Punktering|platt däck
+Tom tank|ingen räckvidd
+Dörren smäller igen|nycklar inne
+Låst ute|kall väntan
+Fast i kö|stilla rad
+Tappad glass|sorg på marken
+Fel leverans|annans paket
+Pinsam tystnad|alla stirrar
+Fel namn|rodnad
+Mikrofon på|hör allt
+Kameran på|ofrivillig bild
+Skickat till chefen|hjärtstopp
+Autocorrect-fail|fel ord
+Hemlig skärmdelning|privat flik
+Glömt lösenord|återställning
+Fel kod|rött blink
+Kortet nekas|terminalpip
+Swish till fel person|pengapanik
+Kvarglömd väska|tom axel
+Försvunnen sko|en fot redo
+Bröllopstal spårar|för många detaljer
+Present utan kort|okänd givare
+Öppnad fel julklapp|fel namn
+För sen taxi|ingen bil
+Fel adress|fel dörr
+Fel våning|förvirrad hiss
+Hiss stannar|mellan plan
+Strömavbrott|allt slocknar
+Wifi nere|ingen kontakt
+Serverkrasch|röd dashboard
+Printerstopp|papper fast
+Sömnförsovning|panikmorgon
+Snooze-maraton|nio alarm
+För sen till möte|svettig entré
+Fel kalenderdag|tom lokal
+Råkat svara alla|alla fick det
+Mute misslyckas|hörd suck
+Hög ringsignal|tyst rum
+Barn avbryter möte|liten gäst
+Katt över tangentbordet|kaosknappar
+Spillt kaffe på laptop|dyr pöl
+Tangent fastnar|samma bokstav
+Uppdatering startar|fel timing
+Batteri på 1%|röd ikon
+App kraschar|stänger ner
+GPS luras|omväg
+Biljett borta|fickpanik
+Passet hemma|resestopp
+Överbokat flyg|ingen stol
+Säkerhetskontroll kö|lång serpentin
+Väskan väger för mycket|öppen resväska
+Fel gate|springer fel
+Matförgiftning|dålig buffé
+Hicka på dejt|romantikstopp
+Nysattack|ingen kontroll
+Klädkris|inget passar
+Fläck på skjortan|synligt bevis
+Söm går upp|sprucken tråd
+Maskara rinner|svarta spår
+Frisyr kollapsar|dåligt hår
+Parfym överdos|doftmoln
+Skoskav|öm häl
+Högklack fastnar|gallerfälla
+Kostym spricker|fel rörelse
+Mössa tappas|kallt huvud
+Regn utan paraply|genomblöt
+Vind vänder paraply|ut och in
+Snö i skon|iskall fot
+Isfläck|plötsligt fall
+Lerigt fall|bruna kläder
+Cykelkedja hoppar|svarta fingrar
+Barnvagn fastnar|tröskelstrul
+Hundkoppel trasslar|knutpromenad
+Pling från okänd chatt|nyfiken panik
+Fel emoji|fel ton
+Slut på toalettpapper|tom rulle
+Kö till toaletten|akut rad
+Dörrhandtag lossnar|handen full
+Nyckel bryts|halva kvar
+Salt istället för socker|förstörd kaka
+Bränd sås|svart kastrull
+Överkokt pasta|sladdrig
+Deg jäser över|bänksvamp
+Tårta välter|grädde på golvet
+Kork fastnar|vinproblem
+Vinflaska sprutar|röda stänk
+Grillen slocknar|rå korv
+Glas krossas|skärvor
+Tallrik tappas|porslinssmäll
+Diskberg|ingen bänk
+Kylskåp läcker|pöl under dörr
+Frysen frostar igen|isvägg
+Soppa kokar över|spisflod
+Chili för stark|brinnande mun
+Bakpulver glöms|platt kaka
+Kaffemaskin strejkar|ingen morgon
+Kniv slö|mosar tomat
+Skärbräda halkar|farlig hackning
+Rök i köket|vädringspanik
+Fel krydda|konstig smak
+Tomt kylskåp|eko
+Kakor bränns|svarta kanter
+Sås skär sig|grynig katastrof
+Tyst gruppchatt|ingen svarar
+Läst men inget svar|blå bockar
+Fel dresscode|ensam kostym
+Ex på festen|stel hälsning
+Hemlig gäst avslöjas|för tidig chock
+Dansgolv tomt|ensam DJ
+Spellista hoppar|fel låt
+Högtalare dör|tyst fest
+Mikrofon rundgång|pip i örat
+Tal blir för långt|gäster gäspar
+Skål missas|glas i otakt
+Glas på mattan|röd fläck
+Ballong smäller|plötsligt pang
+Konfetti överallt|städmardröm
+Bord välter|allt glider
+Tält blåser bort|flygande duk
+Grillos över gäster|rökögon
+Present glöms|tomma händer
+Namnskylt fel|fel identitet
+Bordsplacering spricker|oväntad fiende
+Gäst fastnar i trafiken|sen ankomst
+Oväntad plus one|extra stol
+Granne klagar|sänkt volym
+Passkontroll stopp|frågor vid gräns
+Hotellbokning saknas|ingen reservation
+Nyckelkort funkar inte|rött lås
+Rum är ostädat|överraskande lakan
+Dusch kall|isvatten
+Bagage försvinner|tomt band
+Solkräm glöms|röd hud
+Sand i allt|knastrar överallt
+Myggbett överallt|kliande prickar
+Turistfälla|dyr souvenir
+Språkmiss|fel beställning
+Valuta fel|konstiga mynt
+Roamingchock|dyr surf
+Karta baklänges|fel riktning
+Fel tågperrong|dörrarna stängs
+Avstigning missas|nästa station
+Bilkö i timmar|stillastående semester
+Däck exploderar|högt smäll
+GPS omväg|skogsväg
+Färjan går|vinkar från kaj
+Storm på camping|fladdrande tält
+Tältpinne saknas|slappt tak
+Luftmadrass läcker|golvnatt
+Sovsäck blöt|kall natt
+Tvätt färgar rosa|vit blev röd
+Krympt tröja|barnstorlek
+Strumpa försvinner|ensam kvar
+Dammsugaren dör|halva rummet
+Vattenläcka|dropppanik
+Stopp i avlopp|stigande vatten
+Toalett stopp|ingen spolar
+Fönster blåser upp|gardiner flyger
+Gardinstång faller|tyg på golvet
+Hylla rasar|böcker överallt
+Tavla sned|stör ögat
+Växt välter|jordkaos
+Jord på golvet|svarta spår
+Färgspill|permanent fläck
+Tapet bubblar|väggproblem
+Skruv saknas|möbel vinglar
+Möbel felmonteras|extra delar
+Batterier slut|ingen fjärr
+Lampa blinkar|spökkänsla
+Element kallt|filtläge
+Fläkt gnisslar|störande ljud
+Larm går igång|högt tjut
+Kod glöms|låst panel
+Sopkärl fullt|locket stänger inte
+Provpanik|tomt huvud
+Pennan dör|ingen bläck
+Presentation försvinner|fil borta
+Fel fil skickas|panikmejl
+Excel kraschar|osparade celler
+Deadline imorgon|sen natt
+Chef bakom ryggen|stel rygg
+Lunchlåda läcker|sås i väskan
+Kaffemaskin kö|morgonsuck
+Fel Teamsnamn|konstig etikett
+Skärmdelning privat flik|alla såg
+Slajd med stavfel|stor skärm
+Whiteboardpenna tom|svag linje
+Konferensrum bokat|ingen plats
+Hisskö före möte|minuter försvinner
+Dator uppdaterar|procent långsamt
+Tangentbord fel språk|konstiga tecken
+Musen försvinner|markörjakt
+Kamera fryser|ful min
+Ljudeko|dubbel röst
+Signatur fel|gammal titel
+Avtal saknas|inget underlag
+Faktura dubbel|två krav
+Kund ringer arg|högt tonläge
+Råkar gilla gammal bild|digital rodnad
+Kommentar på fel konto|offentlig panik
+Story publiceras|för många tittare
+Hemlig notis|skärmen avslöjar
+Skvaller hörs|fel person bakom
+Överraskning avslöjad|ingen chock kvar
+Fel person vinkar tillbaka|awkward sekund
+Hälsning utan handslag|luftgrepp
+Glömd replik|tom blick
+Skratt vid fel tillfälle|fel stämning
+Tårar i tal|röst spricker
+Presentprislapp kvar|synligt pris
+Lappar försvinner|ingen ordning
+Lottdragning fel|fel vinnare
+Kvitto tappas|ingen retur
+Köpet går inte igenom|terminal nej
+Rabattkod utgången|fullt pris
+Returdatum passerat|för sent
+Paket till granne|fel dörr
+Dörrklocka mitt i natt|klarvaken
+Brandövning|alla ut
+Sirener nära|hjärtat hoppar
+Regn på bröllop|blöt klänning
+Solglasögon går sönder|sned båge
+      `),
+    };
+
+    const WORD_CATEGORIES = CATEGORIES.map(category => {
+      const expansion = CATEGORY_EXPANSIONS[category.id] || [];
+      return {
+        ...category,
+        words: [...category.words, ...expansion.map(entry => entry.word)]
+      };
+    });
+
+    const WORD_CLUES = {
+      ...CLUES,
+      ...Object.fromEntries(Object.values(CATEGORY_EXPANSIONS).flatMap(entries =>
+        entries.map(entry => [entry.word, entry.clue])
+      ))
+    };
+
+    function parseWordPairs(lines) {
+      return lines
+        .trim()
+        .split("\n")
+        .map(line => line.trim())
+        .filter(Boolean)
+        .map(line => {
+          const separator = line.indexOf("|");
+          return {
+            word: line.slice(0, separator).trim(),
+            clue: line.slice(separator + 1).trim()
+          };
+        });
+    }
+
     const DEFAULT_NAMES = ["Alex", "Sam", "Kim", "Robin", "Charlie", "Lo", "Nikki", "Mio"];
     const STORAGE_KEY = "imposter_game_setup_v1";
 
@@ -679,7 +2652,7 @@
     }
 
     function selectedWords() {
-      return CATEGORIES
+      return WORD_CATEGORIES
         .filter(category => state.categories.includes(category.id))
         .flatMap(category => category.words.map(word => ({ word, category: category.name })));
     }
@@ -778,7 +2751,7 @@
           <div class="panel">
             <p class="section-title">Kategorier</p>
             <div class="choice-grid">
-              ${CATEGORIES.map(category => `
+              ${WORD_CATEGORIES.map(category => `
                 <button class="choice ${state.categories.includes(category.id) ? "active" : ""}" onclick="toggleCategory('${category.id}')">
                   <strong>${esc(category.name)}</strong>
                   <span>${category.words.length} ord</span>
@@ -931,7 +2904,7 @@
     }
 
     function wordClue(word) {
-      return CLUES[word] || "svag hint";
+      return WORD_CLUES[word] || "svag hint";
     }
 
     function revealCard() {
