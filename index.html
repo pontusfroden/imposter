@@ -390,11 +390,6 @@
       color: #cbd5e1;
     }
 
-    .summary {
-      display: grid;
-      gap: 10px;
-    }
-
     .pill-row {
       display: flex;
       flex-wrap: wrap;
@@ -535,7 +530,6 @@
       if (state.screen === "home") return renderHome();
       if (state.screen === "setup") return renderSetup();
       if (state.screen === "round") return renderRound();
-      if (state.screen === "summary") return renderSummary();
       renderHome();
     }
 
@@ -644,31 +638,6 @@
       `);
     }
 
-    function renderSummary() {
-      const round = state.round;
-      if (!round) return renderSetup();
-      renderShell(h`
-        <section class="screen">
-          <div class="panel summary">
-            <p class="section-title">Rundan är igång</p>
-            <div>
-              <div class="card-kicker">Ordet</div>
-              <div class="role-word">${esc(round.word)}</div>
-              <p class="notice">Kategori: ${esc(round.category)}</p>
-            </div>
-            <div>
-              <p class="section-title">Imposter</p>
-              <div class="pill-row">
-                ${round.imposters.map(i => `<span class="pill">${esc(round.players[i])}</span>`).join("")}
-              </div>
-            </div>
-          </div>
-          <button class="primary" onclick="startRound()">Ny runda</button>
-          <button class="secondary" onclick="goSetup()">Ändra inställningar</button>
-        </section>
-      `);
-    }
-
     function goSetup() {
       state.screen = "setup";
       state.round = null;
@@ -738,8 +707,9 @@
     function hideAndNext() {
       const round = state.round;
       if (round.current >= round.players.length - 1) {
-        state.screen = "summary";
-        round.revealed = false;
+        state.screen = "setup";
+        state.round = null;
+        saveState();
       } else {
         round.current += 1;
         round.revealed = false;
