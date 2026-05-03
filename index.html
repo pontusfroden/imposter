@@ -415,8 +415,6 @@
       user-select: none;
     }
 
-    .role-card:active { transform: scale(.992); }
-
     .role-card.hidden {
       background:
         linear-gradient(135deg, rgba(17, 24, 39, .96), rgba(31, 41, 55, .94)),
@@ -839,11 +837,11 @@
       renderShell(h`
         <section class="screen card-stage">
           <p class="pass"><strong>${round.current + 1} av ${round.players.length}</strong></p>
-          <button class="role-card ${isRevealed ? (isImposter ? "imposter" : "word") : "hidden"}" onclick="${isRevealed ? "hideAndNext()" : "revealCard()"}">
+          <div class="role-card ${isRevealed ? (isImposter ? "imposter" : "word") : "hidden"}">
             <span class="card-kicker">${isRevealed ? "Ditt kort" : "Spelare"}</span>
             <span class="role-word">${esc(cardText)}</span>
             <span class="role-detail">${esc(detail)}</span>
-          </button>
+          </div>
           <div class="footer-actions">
             ${isRevealed
               ? `<button class="primary" onclick="hideAndNext()">${round.current === round.players.length - 1 ? "Avsluta utdelning" : "Dölj och skicka vidare"}</button>`
