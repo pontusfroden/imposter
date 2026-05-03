@@ -518,6 +518,105 @@
       { id: "kaos", name: "Kaos", words: ["Karaoke", "Bakfylla", "Familjemiddag", "Första dejt", "Tappad mobil", "Felsms", "Överraskningsfest", "Rödvin på mattan", "Missat tåg", "Hemlig tomte", "Gruppchatt", "Trasig hiss"] }
     ];
 
+    const CLUES = {
+      "Tandborste": "mint",
+      "Kylskåp": "kallt",
+      "Busskort": "blipp",
+      "Paraply": "regnskydd",
+      "Tvättmaskin": "centrifug",
+      "Soffa": "slappa",
+      "Nycklar": "låsa upp",
+      "Vattenflaska": "påfyllning",
+      "Hörlurar": "bas",
+      "Diskborste": "löddrigt",
+      "Skohorn": "häl",
+      "Mobilskal": "skydd",
+      "Tacos": "fredag",
+      "Pannkakor": "sylt",
+      "Sushi": "wasabi",
+      "Kanelbulle": "pärlsocker",
+      "Falafel": "kikärtor",
+      "Lasagne": "lager",
+      "Ramen": "buljong",
+      "Pizza": "kartong",
+      "Chokladboll": "kokos",
+      "Ceasarsallad": "krutonger",
+      "Våfflor": "grädde",
+      "Burgare": "brödlock",
+      "Flygplats": "gate",
+      "Bibliotek": "tystnad",
+      "Gym": "svett",
+      "Strand": "sand",
+      "Biograf": "popcorn",
+      "Museum": "utställning",
+      "Skidbacke": "lift",
+      "Bensinstation": "pump",
+      "Camping": "tält",
+      "Tågstation": "perrong",
+      "Nöjespark": "åkband",
+      "Kontor": "möte",
+      "Midsommar": "stång",
+      "Systembolaget": "kölapp",
+      "Fika": "kaffe",
+      "Allemansrätten": "fri natur",
+      "Skärgård": "brygga",
+      "Vasaloppet": "blåbärssoppa",
+      "Melodifestivalen": "glitter",
+      "Kräftskiva": "hattar",
+      "Snus": "prilla",
+      "Fjällen": "vidder",
+      "Julmust": "skum",
+      "Valborg": "brasa",
+      "Superhjälte": "mantel",
+      "Deckare": "mordgåta",
+      "Realityserie": "drama",
+      "Animerad film": "tecknat",
+      "Romcom": "kärleksstrul",
+      "Talkshow": "soffa",
+      "Sci-fi": "framtid",
+      "Dokumentär": "verklighet",
+      "Actionfilm": "explosion",
+      "Talangjakt": "jury",
+      "Sitcom": "skrattspår",
+      "Skräckfilm": "rysning",
+      "Läkare": "stetoskop",
+      "Lärare": "whiteboard",
+      "Barista": "espresso",
+      "Pilot": "cockpit",
+      "Brandman": "slang",
+      "Programmerare": "kod",
+      "Kock": "stekpanna",
+      "Mäklare": "visning",
+      "Journalist": "rubrik",
+      "Frisör": "sax",
+      "Elektriker": "kabel",
+      "Arkitekt": "ritning",
+      "Fotboll": "mål",
+      "Padel": "glasvägg",
+      "Ishockey": "puck",
+      "Basket": "korg",
+      "Löpning": "puls",
+      "Simning": "klor",
+      "Tennis": "serve",
+      "Golf": "green",
+      "Skateboard": "kickflip",
+      "Klättring": "grepp",
+      "Handboll": "klister",
+      "Yoga": "andning",
+      "Karaoke": "falsksång",
+      "Bakfylla": "huvudvärk",
+      "Familjemiddag": "släkt",
+      "Första dejt": "nervöst",
+      "Tappad mobil": "sprucken skärm",
+      "Felsms": "fel chatt",
+      "Överraskningsfest": "gömda gäster",
+      "Rödvin på mattan": "fläck",
+      "Missat tåg": "perrongstress",
+      "Hemlig tomte": "paketlek",
+      "Gruppchatt": "pling",
+      "Trasig hiss": "trappor"
+    };
+
     const DEFAULT_NAMES = ["Alex", "Sam", "Kim", "Robin", "Charlie", "Lo", "Nikki", "Mio"];
     const STORAGE_KEY = "imposter_game_setup_v1";
 
@@ -669,7 +768,7 @@
             <div class="choice-grid">
               <button class="choice ${state.imposterInfo.clue ? "active" : ""}" onclick="toggleImposterInfo('clue')">
                 <strong>Med ledtråd</strong>
-                <span>Första bokstaven och ordlängd</span>
+                <span>Kort hint kopplad till ordet</span>
               </button>
               <button class="choice ${state.imposterInfo.category ? "active" : ""}" onclick="toggleImposterInfo('category')">
                 <strong>Med kategori</strong>
@@ -834,9 +933,7 @@
     }
 
     function wordClue(word) {
-      const letters = [...word.replace(/[^A-Za-zÅÄÖåäö]/g, "")];
-      const first = letters[0] ? letters[0].toUpperCase() : "?";
-      return `${first}, ${letters.length} bokstäver`;
+      return CLUES[word] || "svag hint";
     }
 
     function revealCard() {
