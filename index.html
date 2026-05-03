@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111827">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Imposter">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Imposter</title>
+  <link id="pwa-manifest" rel="manifest">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #111827;
+      --bg-2: #182335;
+      --panel: rgba(255, 255, 255, .08);
+      --panel-strong: rgba(255, 255, 255, .14);
+      --text: #f8fafc;
+      --muted: #b8c2d4;
+      --line: rgba(255, 255, 255, .16);
+      --accent: #f4c95d;
+      --accent-2: #2dd4bf;
+      --danger: #fb7185;
+      --shadow: 0 24px 70px rgba(0, 0, 0, .35);
+      --radius: 8px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      margin: 0;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(45, 212, 191, .18), transparent 28rem),
+        radial-gradient(circle at 100% 15%, rgba(244, 201, 93, .16), transparent 24rem),
+        linear-gradient(160deg, var(--bg), #0f172a 58%, #162033);
+      color: var(--text);
+    }
+
+    body {
+      min-height: 100svh;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    button, input {
+      font: inherit;
+    }
+
+    button {
+      border: 0;
+      color: inherit;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    input {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(15, 23, 42, .74);
+      color: var(--text);
+      padding: 13px 14px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: rgba(244, 201, 93, .75);
+      box-shadow: 0 0 0 4px rgba(244, 201, 93, .14);
+    }
+
+    .shell {
+      width: min(100%, 760px);
+      min-height: 100svh;
+      margin: 0 auto;
+      padding: max(18px, env(safe-area-inset-top)) 16px max(22px, env(safe-area-inset-bottom));
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-width: 0;
+    }
+
+    .mark {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, var(--accent), #f97316);
+      box-shadow: 0 12px 28px rgba(244, 201, 93, .2);
+      display: grid;
+      place-items: center;
+      color: #111827;
+      font-weight: 900;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 1.14rem;
+      letter-spacing: 0;
+    }
+
+    .brand p {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .ghost-btn, .icon-btn {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .07);
+      border-radius: var(--radius);
+      min-height: 42px;
+      padding: 0 13px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .icon-btn {
+      width: 42px;
+      padding: 0;
+    }
+
+    .screen {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .hero {
+      min-height: 230px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      position: relative;
+      background:
+        linear-gradient(180deg, transparent 10%, rgba(15, 23, 42, .84) 68%),
+        url("data:image/svg+xml,%3Csvg width='900' height='620' viewBox='0 0 900 620' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='900' height='620' fill='%23182735'/%3E%3Cg opacity='.88'%3E%3Crect x='110' y='82' width='210' height='300' rx='18' fill='%23f8fafc' transform='rotate(-11 215 232)'/%3E%3Crect x='132' y='108' width='166' height='246' rx='10' fill='%23111827' transform='rotate(-11 215 232)'/%3E%3Ccircle cx='214' cy='212' r='39' fill='%23f4c95d'/%3E%3Cpath d='M214 170l16 28 32 7-22 24 4 33-30-14-30 14 4-33-22-24 32-7z' fill='%23f97316'/%3E%3Crect x='356' y='126' width='210' height='300' rx='18' fill='%23f8fafc' transform='rotate(8 461 276)'/%3E%3Crect x='378' y='152' width='166' height='246' rx='10' fill='%23182735' transform='rotate(8 461 276)'/%3E%3Cpath d='M461 220c34 0 58 29 47 61-8 23-29 33-47 54-18-21-39-31-47-54-11-32 13-61 47-61z' fill='%232dd4bf'/%3E%3Crect x='590' y='70' width='210' height='300' rx='18' fill='%23f8fafc' transform='rotate(-4 695 220)'/%3E%3Crect x='612' y='96' width='166' height='246' rx='10' fill='%23111827' transform='rotate(-4 695 220)'/%3E%3Cpath d='M695 153l48 84-48 84-48-84z' fill='%23fb7185'/%3E%3C/g%3E%3C/svg%3E") center / cover;
+    }
+
+    .hero h2 {
+      margin: 0 0 8px;
+      font-size: clamp(2.1rem, 10vw, 4.4rem);
+      line-height: .92;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 34rem;
+      color: #dbe4f0;
+      line-height: 1.45;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: 0 16px 44px rgba(0, 0, 0, .18);
+      padding: 16px;
+    }
+
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .row > * { flex: 1; }
+
+    .section-title {
+      margin: 0 0 10px;
+      font-size: .96rem;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .primary {
+      width: 100%;
+      min-height: 54px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, var(--accent), #f97316);
+      color: #111827;
+      font-weight: 900;
+      box-shadow: 0 12px 28px rgba(249, 115, 22, .23);
+    }
+
+    .primary:disabled {
+      cursor: not-allowed;
+      filter: grayscale(.55);
+      opacity: .58;
+      box-shadow: none;
+    }
+
+    .secondary {
+      width: 100%;
+      min-height: 50px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .08);
+      font-weight: 800;
+    }
+
+    .segmented {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .segmented button,
+    .choice {
+      min-height: 54px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .07);
+      padding: 12px;
+      text-align: left;
+    }
+
+    .segmented button.active,
+    .choice.active {
+      border-color: rgba(244, 201, 93, .88);
+      background: rgba(244, 201, 93, .16);
+    }
+
+    .choice-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
+    }
+
+    .choice strong {
+      display: block;
+      font-size: .98rem;
+    }
+
+    .choice span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    .stepper {
+      display: grid;
+      grid-template-columns: 52px 1fr 52px;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .stepper button {
+      height: 48px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .09);
+      border: 1px solid var(--line);
+      font-size: 1.35rem;
+      font-weight: 800;
+    }
+
+    .stepper output {
+      min-height: 58px;
+      border-radius: var(--radius);
+      background: rgba(15, 23, 42, .64);
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      font-size: 1.9rem;
+      font-weight: 900;
+    }
+
+    .players {
+      display: grid;
+      gap: 9px;
+    }
+
+    .card-stage {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+      min-height: 0;
+    }
+
+    .pass {
+      text-align: center;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .pass strong {
+      display: block;
+      color: var(--text);
+      font-size: 1.55rem;
+      margin-bottom: 4px;
+    }
+
+    .role-card {
+      min-height: min(62svh, 540px);
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, .22);
+      background: linear-gradient(150deg, #f8fafc, #dbeafe);
+      color: #111827;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 18px;
+      text-align: center;
+      transition: transform .22s ease;
+      user-select: none;
+    }
+
+    .role-card:active { transform: scale(.992); }
+
+    .role-card.hidden {
+      background:
+        linear-gradient(135deg, rgba(17, 24, 39, .96), rgba(31, 41, 55, .94)),
+        repeating-linear-gradient(45deg, rgba(244, 201, 93, .26) 0 9px, rgba(45, 212, 191, .16) 9px 18px);
+      color: var(--text);
+    }
+
+    .card-kicker {
+      color: rgba(17, 24, 39, .66);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .78rem;
+    }
+
+    .hidden .card-kicker {
+      color: var(--accent);
+    }
+
+    .role-word {
+      margin: 12px 0 8px;
+      font-size: clamp(2.2rem, 13vw, 5rem);
+      font-weight: 950;
+      line-height: .95;
+      overflow-wrap: anywhere;
+    }
+
+    .role-detail {
+      color: rgba(17, 24, 39, .72);
+      max-width: 25rem;
+      line-height: 1.35;
+    }
+
+    .hidden .role-detail {
+      color: #cbd5e1;
+    }
+
+    .summary {
+      display: grid;
+      gap: 10px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 10px;
+      background: rgba(255, 255, 255, .07);
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .notice {
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.4;
+    }
+
+    .footer-actions {
+      display: grid;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    @media (min-width: 680px) {
+      .shell { padding-inline: 24px; }
+      .screen.two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+      }
+      .hero { min-height: 360px; }
+      .choice-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <main id="app"></main>
+
+  <script>
+    const CATEGORIES = [
+      { id: "vardag", name: "Vardag", words: ["Tandborste", "Kylskåp", "Busskort", "Paraply", "Tvättmaskin", "Soffa", "Nycklar", "Vattenflaska", "Hörlurar", "Diskborste", "Skohorn", "Mobilskal"] },
+      { id: "mat", name: "Mat", words: ["Tacos", "Pannkakor", "Sushi", "Kanelbulle", "Falafel", "Lasagne", "Ramen", "Pizza", "Chokladboll", "Ceasarsallad", "Våfflor", "Burgare"] },
+      { id: "platser", name: "Platser", words: ["Flygplats", "Bibliotek", "Gym", "Strand", "Biograf", "Museum", "Skidbacke", "Bensinstation", "Camping", "Tågstation", "Nöjespark", "Kontor"] },
+      { id: "sverige", name: "Sverige", words: ["Midsommar", "Systembolaget", "Fika", "Allemansrätten", "Skärgård", "Vasaloppet", "Melodifestivalen", "Kräftskiva", "Snus", "Fjällen", "Julmust", "Valborg"] },
+      { id: "film", name: "Film & TV", words: ["Superhjälte", "Deckare", "Realityserie", "Animerad film", "Romcom", "Talkshow", "Sci-fi", "Dokumentär", "Actionfilm", "Talangjakt", "Sitcom", "Skräckfilm"] },
+      { id: "jobb", name: "Jobb", words: ["Läkare", "Lärare", "Barista", "Pilot", "Brandman", "Programmerare", "Kock", "Mäklare", "Journalist", "Frisör", "Elektriker", "Arkitekt"] },
+      { id: "sport", name: "Sport", words: ["Fotboll", "Padel", "Ishockey", "Basket", "Löpning", "Simning", "Tennis", "Golf", "Skateboard", "Klättring", "Handboll", "Yoga"] },
+      { id: "kaos", name: "Kaos", words: ["Karaoke", "Bakfylla", "Familjemiddag", "Första dejt", "Tappad mobil", "Felsms", "Överraskningsfest", "Rödvin på mattan", "Missat tåg", "Hemlig tomte", "Gruppchatt", "Trasig hiss"] }
+    ];
+
+    const DEFAULT_NAMES = ["Alex", "Sam", "Kim", "Robin", "Charlie", "Lo", "Nikki", "Mio"];
+    const STORAGE_KEY = "imposter_game_setup_v1";
+
+    let state = loadState() || {
+      screen: "home",
+      type: "classic",
+      categories: ["vardag", "mat", "platser", "sverige"],
+      playerCount: 5,
+      players: DEFAULT_NAMES.slice(0, 5),
+      imposters: 1,
+      round: null
+    };
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : null;
+      } catch {
+        return null;
+      }
+    }
+
+    function saveState() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        screen: state.screen === "round" ? "setup" : state.screen,
+        type: state.type,
+        categories: state.categories,
+        playerCount: state.playerCount,
+        players: state.players,
+        imposters: state.imposters,
+        round: null
+      }));
+    }
+
+    function h(strings, ...values) {
+      return strings.reduce((out, part, i) => out + part + (values[i] ?? ""), "");
+    }
+
+    function esc(value) {
+      return String(value).replace(/[&<>"']/g, char => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
+      }[char]));
+    }
+
+    function pick(list) {
+      return list[Math.floor(Math.random() * list.length)];
+    }
+
+    function shuffle(list) {
+      const copy = [...list];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    function selectedWords() {
+      return CATEGORIES
+        .filter(category => state.categories.includes(category.id))
+        .flatMap(category => category.words.map(word => ({ word, category: category.name })));
+    }
+
+    function renderShell(content, actions = "") {
+      document.getElementById("app").innerHTML = h`
+        <div class="shell">
+          <header class="topbar">
+            <div class="brand">
+              <div class="mark">?</div>
+              <div>
+                <h1>Imposter</h1>
+                <p>${state.screen === "round" ? "Skicka telefonen vidare" : "Ett spel, en telefon"}</p>
+              </div>
+            </div>
+            ${state.screen !== "home" ? `<button class="ghost-btn" onclick="goSetup()">Setup</button>` : ""}
+          </header>
+          ${content}
+          ${actions}
+        </div>
+      `;
+    }
+
+    function render() {
+      if (state.screen === "home") return renderHome();
+      if (state.screen === "setup") return renderSetup();
+      if (state.screen === "round") return renderRound();
+      if (state.screen === "summary") return renderSummary();
+      renderHome();
+    }
+
+    function renderHome() {
+      renderShell(h`
+        <section class="screen">
+          <div class="hero">
+            <h2>Imposter</h2>
+            <p>Välj kategorier, skriv in spelarna och skicka runt mobilen. Alla får samma ord, förutom impostern.</p>
+          </div>
+          <button class="primary" onclick="goSetup()">Starta spel</button>
+        </section>
+      `);
+    }
+
+    function renderSetup() {
+      const words = selectedWords().length;
+      const canStart = state.categories.length > 0 && state.players.slice(0, state.playerCount).every(Boolean) && state.playerCount >= 3;
+      renderShell(h`
+        <section class="screen">
+          <div class="panel stack">
+            <p class="section-title">Speltyp</p>
+            <div class="segmented">
+              <button class="${state.type === "classic" ? "active" : ""}" onclick="setType('classic')">
+                <strong>Klassisk</strong><br><span class="notice">Ett hemligt ord och ${state.imposters} imposter.</span>
+              </button>
+              <button class="${state.type === "quick" ? "active" : ""}" onclick="setType('quick')">
+                <strong>Snabb</strong><br><span class="notice">Samma regler, kortare runda.</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="panel">
+            <p class="section-title">Kategorier</p>
+            <div class="choice-grid">
+              ${CATEGORIES.map(category => `
+                <button class="choice ${state.categories.includes(category.id) ? "active" : ""}" onclick="toggleCategory('${category.id}')">
+                  <strong>${esc(category.name)}</strong>
+                  <span>${category.words.length} ord</span>
+                </button>
+              `).join("")}
+            </div>
+            <p class="notice">${words} möjliga ord i rundans urval.</p>
+          </div>
+
+          <div class="panel stack">
+            <p class="section-title">Spelare</p>
+            <div class="stepper">
+              <button onclick="setPlayerCount(${state.playerCount - 1})" aria-label="Färre spelare">-</button>
+              <output>${state.playerCount}</output>
+              <button onclick="setPlayerCount(${state.playerCount + 1})" aria-label="Fler spelare">+</button>
+            </div>
+            <div class="players">
+              ${state.players.slice(0, state.playerCount).map((name, i) => `
+                <input value="${esc(name)}" inputmode="text" autocomplete="off" placeholder="Spelare ${i + 1}" oninput="setPlayerName(${i}, this.value)">
+              `).join("")}
+            </div>
+          </div>
+
+          <div class="panel stack">
+            <p class="section-title">Imposters</p>
+            <div class="stepper">
+              <button onclick="setImposters(${state.imposters - 1})" aria-label="Färre imposters">-</button>
+              <output>${state.imposters}</output>
+              <button onclick="setImposters(${state.imposters + 1})" aria-label="Fler imposters">+</button>
+            </div>
+            <p class="notice">Rekommendation: 1 imposter upp till 7 spelare, 2 imposters om ni är fler.</p>
+          </div>
+
+          <button class="primary" ${canStart ? "" : "disabled"} onclick="startRound()">Dela ut roller</button>
+        </section>
+      `);
+    }
+
+    function renderRound() {
+      const round = state.round;
+      if (!round) return goSetup();
+      const player = round.players[round.current];
+      const isRevealed = round.revealed;
+      const isImposter = round.imposters.includes(round.current);
+      const cardText = !isRevealed
+        ? "Tryck för att visa"
+        : isImposter
+          ? "IMPOSTER"
+          : round.word;
+      const detail = !isRevealed
+        ? "Se till att bara rätt person tittar."
+        : isImposter
+          ? "Låtsas att du vet ordet."
+          : `Kategori: ${round.category}`;
+
+      renderShell(h`
+        <section class="screen card-stage">
+          <p class="pass"><strong>${esc(player)}</strong>${round.current + 1} av ${round.players.length}</p>
+          <button class="role-card ${isRevealed ? "" : "hidden"}" onclick="${isRevealed ? "hideAndNext()" : "revealCard()"}">
+            <span class="card-kicker">${isRevealed ? "Ditt kort" : "Hemligt kort"}</span>
+            <span class="role-word">${esc(cardText)}</span>
+            <span class="role-detail">${esc(detail)}</span>
+          </button>
+          <div class="footer-actions">
+            ${isRevealed
+              ? `<button class="primary" onclick="hideAndNext()">${round.current === round.players.length - 1 ? "Avsluta utdelning" : "Dölj och skicka vidare"}</button>`
+              : `<button class="secondary" onclick="revealCard()">Vänd kortet</button>`}
+          </div>
+        </section>
+      `);
+    }
+
+    function renderSummary() {
+      const round = state.round;
+      if (!round) return renderSetup();
+      renderShell(h`
+        <section class="screen">
+          <div class="panel summary">
+            <p class="section-title">Rundan är igång</p>
+            <div>
+              <div class="card-kicker">Ordet</div>
+              <div class="role-word">${esc(round.word)}</div>
+              <p class="notice">Kategori: ${esc(round.category)}</p>
+            </div>
+            <div>
+              <p class="section-title">Imposter</p>
+              <div class="pill-row">
+                ${round.imposters.map(i => `<span class="pill">${esc(round.players[i])}</span>`).join("")}
+              </div>
+            </div>
+          </div>
+          <button class="primary" onclick="startRound()">Ny runda</button>
+          <button class="secondary" onclick="goSetup()">Ändra inställningar</button>
+        </section>
+      `);
+    }
+
+    function goSetup() {
+      state.screen = "setup";
+      state.round = null;
+      saveState();
+      render();
+    }
+
+    function setType(type) {
+      state.type = type;
+      saveState();
+      render();
+    }
+
+    function toggleCategory(id) {
+      state.categories = state.categories.includes(id)
+        ? state.categories.filter(categoryId => categoryId !== id)
+        : [...state.categories, id];
+      saveState();
+      render();
+    }
+
+    function setPlayerCount(count) {
+      state.playerCount = Math.max(3, Math.min(14, count));
+      while (state.players.length < state.playerCount) {
+        state.players.push(DEFAULT_NAMES[state.players.length] || `Spelare ${state.players.length + 1}`);
+      }
+      state.imposters = Math.min(state.imposters, state.playerCount - 2);
+      saveState();
+      render();
+    }
+
+    function setPlayerName(index, value) {
+      state.players[index] = value.trimStart();
+      saveState();
+    }
+
+    function setImposters(count) {
+      state.imposters = Math.max(1, Math.min(state.playerCount - 2, count));
+      saveState();
+      render();
+    }
+
+    function startRound() {
+      const pool = selectedWords();
+      if (!pool.length) return;
+      const chosen = pick(pool);
+      const players = state.players.slice(0, state.playerCount).map((name, i) => name.trim() || `Spelare ${i + 1}`);
+      const imposters = shuffle(players.map((_, i) => i)).slice(0, state.imposters);
+      state.round = {
+        word: chosen.word,
+        category: chosen.category,
+        players,
+        imposters,
+        current: 0,
+        revealed: false
+      };
+      state.screen = "round";
+      saveState();
+      render();
+    }
+
+    function revealCard() {
+      state.round.revealed = true;
+      render();
+    }
+
+    function hideAndNext() {
+      const round = state.round;
+      if (round.current >= round.players.length - 1) {
+        state.screen = "summary";
+        round.revealed = false;
+      } else {
+        round.current += 1;
+        round.revealed = false;
+      }
+      render();
+    }
+
+    function createIcon(size) {
+      const canvas = document.createElement("canvas");
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext("2d");
+      ctx.fillStyle = "#111827";
+      ctx.fillRect(0, 0, size, size);
+      ctx.fillStyle = "#f4c95d";
+      roundedRect(ctx, size * .16, size * .16, size * .68, size * .68, size * .08);
+      ctx.fill();
+      ctx.fillStyle = "#111827";
+      ctx.font = `900 ${size * .48}px system-ui, sans-serif`;
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText("?", size / 2, size * .54);
+      return canvas.toDataURL("image/png");
+    }
+
+    function roundedRect(ctx, x, y, width, height, radius) {
+      ctx.beginPath();
+      ctx.moveTo(x + radius, y);
+      ctx.lineTo(x + width - radius, y);
+      ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+      ctx.lineTo(x + width, y + height - radius);
+      ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+      ctx.lineTo(x + radius, y + height);
+      ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+      ctx.lineTo(x, y + radius);
+      ctx.quadraticCurveTo(x, y, x + radius, y);
+      ctx.closePath();
+    }
+
+    function installManifest() {
+      const icon192 = createIcon(192);
+      const icon512 = createIcon(512);
+      const manifest = {
+        name: "Imposter",
+        short_name: "Imposter",
+        start_url: ".",
+        display: "standalone",
+        background_color: "#111827",
+        theme_color: "#111827",
+        icons: [
+          { src: icon192, sizes: "192x192", type: "image/png" },
+          { src: icon512, sizes: "512x512", type: "image/png" }
+        ]
+      };
+      const blob = new Blob([JSON.stringify(manifest)], { type: "application/manifest+json" });
+      document.getElementById("pwa-manifest").href = URL.createObjectURL(blob);
+      const appleIcon = document.createElement("link");
+      appleIcon.rel = "apple-touch-icon";
+      appleIcon.href = icon192;
+      document.head.appendChild(appleIcon);
+    }
+
+    installManifest();
+    render();
+  </script>
+</body>
+</html>
